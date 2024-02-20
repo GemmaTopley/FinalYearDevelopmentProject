@@ -8,42 +8,55 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/gameLogo"
-        android:layout_width="225dp"
-        android:layout_height="221dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:srcCompat="@drawable/ecoearth1" />
-
-    <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/RubbishImg"
         android:layout_width="1281dp"
         android:layout_height="318dp"
-        app:srcCompat="@drawable/rubbishpile"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="582dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="564dp"
-        tools:layout_editor_absoluteY="330dp"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="1105dp"
-        tools:layout_editor_absoluteY="330dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/rubbishpile" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/RRTitle"
         android:layout_width="1020dp"
         android:layout_height="221dp"
-        app:srcCompat="@drawable/rubbishremovaltext"
-        tools:layout_editor_absoluteX="237dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rubbishremovaltext" />
+
+    <Button
+        android:id="@+id/PZBtn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="#9CCC65"
+        android:onClick="parentBtn"
+        android:text="parent zone"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RRTitle" />
+
+    <ImageButton
+        android:id="@+id/playBtn"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="490dp"
+        android:background="@drawable/playsun"
+        android:onClick="playBtn"
+        app:layout_constraintBottom_toTopOf="@+id/RubbishImg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RRTitle" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="223dp"
+        android:layout_height="221dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/RRTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ecoearth1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
