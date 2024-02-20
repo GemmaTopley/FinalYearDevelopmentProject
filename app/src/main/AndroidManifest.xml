@@ -13,6 +13,18 @@
         android:theme="@style/Theme.DevelopmentProjectP2673488"
         tools:targetApi="31">
         <activity
+            android:name=".ParentZone"
+            android:exported="false" />
+        <activity
+            android:name=".ParentZoneValidation"
+            android:exported="false" />
+        <activity
+            android:name=".BeachLevel"
+            android:exported="false" />
+        <activity
+            android:name=".LevelSelect"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

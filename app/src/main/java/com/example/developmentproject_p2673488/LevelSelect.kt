@@ -5,19 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class MainActivity : AppCompatActivity() {
+class LevelSelect : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_level_select)
     }
 
-    fun playBtn (view : View){
-        val intent = Intent(this, LevelSelect::class.java)
+    fun beachBtn (view : View){
+        val intent = Intent(this, BeachLevel::class.java)
         startActivity(intent)
     }
 
-    fun parentBtn(view: View){
-        val intent = Intent(this, ParentZoneValidation::class.java)
+    fun forestBtn (view : View){
+        //val intent = Intent(this, forestLevel::class.java)
         startActivity(intent)
     }
 }
