@@ -22,6 +22,10 @@ class ParentZoneValidation : AppCompatActivity() {
         } else {
             error.visibility = View.VISIBLE
         }
+    }
 
+    fun homeBtn (view : View){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }

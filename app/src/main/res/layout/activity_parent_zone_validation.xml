@@ -75,10 +75,10 @@
         android:layout_height="69dp"
         android:ems="10"
         android:fontFamily="@font/comic_neue_light"
-        android:hint="answer"
+        android:hint=" answer"
         android:inputType="number"
         android:textAlignment="viewStart"
-        android:textSize="60sp"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintStart_toEndOf="@+id/equationTxtx"
@@ -113,4 +113,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/equationTxtx" />
+
+    <ImageButton
+        android:id="@+id/homeBtn2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/homebtn"
+        android:onClick="homeBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,4 +7,33 @@
     android:background="@drawable/sealevelback"
     tools:context=".BeachLevel">
 
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/backcloud"
+        android:onClick="homeBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/bottleBtn"
+        android:layout_width="145dp"
+        android:layout_height="176dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/greenplasticbottle"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/beerHolderBtn"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:background="@drawable/beerholder"
+        tools:layout_editor_absoluteX="643dp"
+        tools:layout_editor_absoluteY="505dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

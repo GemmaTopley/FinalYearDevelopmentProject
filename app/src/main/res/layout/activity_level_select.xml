@@ -8,6 +8,17 @@
     tools:context=".LevelSelect">
 
     <ImageButton
+        android:id="@+id/homeBtn3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/homebtn"
+        android:onClick="homeBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
         android:id="@+id/beachLvlBtn"
         android:layout_width="500dp"
         android:layout_height="500dp"

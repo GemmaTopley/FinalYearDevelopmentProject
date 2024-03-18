@@ -20,4 +20,9 @@ class LevelSelect : AppCompatActivity() {
         //val intent = Intent(this, forestLevel::class.java)
         startActivity(intent)
     }
+
+    fun homeBtn (view : View){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
 }
