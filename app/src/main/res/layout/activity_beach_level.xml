@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sealevelback"
+    android:onClick="litterBtn"
     tools:context=".BeachLevel">
 
     <ImageButton
@@ -14,7 +15,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/backcloud"
-        android:onClick="homeBtn"
+        android:onClick="backBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,6 +26,7 @@
         android:layout_marginStart="39dp"
         android:layout_marginBottom="3dp"
         android:background="@drawable/greenplasticbottle"
+        android:onClick="litterBtn"
         android:rotation="90"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -33,7 +35,43 @@
         android:id="@+id/beerHolderBtn"
         android:layout_width="125dp"
         android:layout_height="125dp"
+        android:layout_marginEnd="270dp"
+        android:layout_marginBottom="270dp"
         android:background="@drawable/beerholder"
-        tools:layout_editor_absoluteX="643dp"
-        tools:layout_editor_absoluteY="505dp" />
+        android:onClick="litterBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/canBtn" />
+
+    <ImageButton
+        android:id="@+id/canBtn"
+        android:layout_width="172dp"
+        android:layout_height="128dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="11dp"
+        android:background="@drawable/redcan"
+        android:onClick="litterBtn"
+        app:layout_constraintBottom_toTopOf="@+id/glassBtn"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/newsBtn"
+        android:layout_width="206dp"
+        android:layout_height="174dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="87dp"
+        android:background="@drawable/newspaper"
+        android:onClick="litterBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bottleBtn" />
+
+    <ImageButton
+        android:id="@+id/glassBtn"
+        android:layout_width="263dp"
+        android:layout_height="143dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/brokenbottle"
+        android:onClick="litterBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

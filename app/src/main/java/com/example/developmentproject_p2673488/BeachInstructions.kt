@@ -5,19 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class BeachLevel : AppCompatActivity() {
+class BeachInstructions : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_beach_level)
+        setContentView(R.layout.activity_beach_instructions)
     }
 
-    fun backBtn (view : View){
-        val intent = Intent(this, BeachInstructions::class.java)
-        startActivity(intent)
-    }
 
-    fun litterBtn (view : View){
-        val intent = Intent(this, LitterPickUp::class.java)
+    fun startBtn (view : View){
+        val intent = Intent(this, BeachLevel::class.java)
         startActivity(intent)
     }
 }

@@ -12,7 +12,7 @@ class LevelSelect : AppCompatActivity() {
     }
 
     fun beachBtn (view : View){
-        val intent = Intent(this, BeachLevel::class.java)
+        val intent = Intent(this, BeachInstructions::class.java)
         startActivity(intent)
     }
 
