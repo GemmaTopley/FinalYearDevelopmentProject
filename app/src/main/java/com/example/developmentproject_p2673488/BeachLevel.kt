@@ -19,6 +19,8 @@ class BeachLevel : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_beach_level)
 
+        var dbHelper = DatabaseHelper(this)
+
         canBtn = findViewById(R.id.canBtn)
         bottleBtn = findViewById(R.id.bottleBtn)
         glassBtn = findViewById(R.id.glassBtn)
@@ -29,6 +31,34 @@ class BeachLevel : AppCompatActivity() {
         glassBtn.setOnClickListener{handleLitterClick("Glass")}
         ringsBtn.setOnClickListener{handleLitterClick("Rings")}
 
+        var canDB = dbHelper.getRubbish("Can")
+        var bottleDB = dbHelper.getRubbish("Bottle")
+        var glassDB = dbHelper.getRubbish("Glass")
+        var ringsDB = dbHelper.getRubbish("Rings")
+
+        if (canDB != null) {
+            if(canDB.RubVisible.equals(0)){
+                canBtn.visibility = View.INVISIBLE
+            }
+        }
+
+        if (bottleDB != null) {
+            if(bottleDB.RubVisible.equals(0)){
+                bottleBtn.visibility = View.INVISIBLE
+            }
+        }
+
+        if (glassDB != null) {
+            if(glassDB.RubVisible.equals(0)){
+                glassBtn.visibility = View.INVISIBLE
+            }
+        }
+
+        if (ringsDB != null) {
+            if(ringsDB.RubVisible.equals(0)){
+                ringsBtn.visibility = View.INVISIBLE
+            }
+        }
 
     }
 
