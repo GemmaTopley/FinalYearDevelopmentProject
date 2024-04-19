@@ -15,6 +15,8 @@ class BeachLevel : AppCompatActivity() {
     private lateinit var glassBtn: ImageButton
     private lateinit var ringsBtn: ImageButton
 
+    private lateinit var newsBtn: ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_beach_level)
@@ -60,6 +62,10 @@ class BeachLevel : AppCompatActivity() {
             }
         }
 
+
+        newsBtn = findViewById(R.id.newsBtn)
+        newsBtn.setOnClickListener{handleNonLitterClick("Newspaper")}
+
     }
 
     private fun handleLitterClick(litterName: String){
@@ -68,6 +74,14 @@ class BeachLevel : AppCompatActivity() {
 
         val intent = Intent(this, LitterPickUp::class.java)
         intent.putExtra("Litter", litter)
+        startActivity(intent)
+    }
+
+    private fun handleNonLitterClick(nonLitterName: String){
+        val dbHelper = DatabaseHelper(this)
+        val nonLitter = dbHelper.getRubbish(nonLitterName)
+        val intent = Intent(this, NonLitterPickup::class.java)
+        intent.putExtra("Litter", nonLitter)
         startActivity(intent)
     }
 

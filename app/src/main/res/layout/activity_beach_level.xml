@@ -76,10 +76,26 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
-        android:id="@+id/nonLitterPlaceholder"
+        android:id="@+id/seaWeedBtn"
         android:layout_width="128dp"
         android:layout_height="103dp"
         app:srcCompat="@android:drawable/btn_star_big_on"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="536dp" />
+
+    <ImageButton
+        android:id="@+id/shellsBtn"
+        android:layout_width="110dp"
+        android:layout_height="101dp"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        tools:layout_editor_absoluteX="440dp"
+        tools:layout_editor_absoluteY="574dp" />
+
+    <ImageButton
+        android:id="@+id/sandCastleBtn"
+        android:layout_width="157dp"
+        android:layout_height="142dp"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        tools:layout_editor_absoluteX="600dp"
+        tools:layout_editor_absoluteY="702dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
