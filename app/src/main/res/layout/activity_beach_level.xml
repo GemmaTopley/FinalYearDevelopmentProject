@@ -21,26 +21,31 @@
 
     <ImageButton
         android:id="@+id/bottleBtn"
-        android:layout_width="145dp"
-        android:layout_height="176dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="39dp"
+        android:layout_marginEnd="416dp"
         android:layout_marginBottom="3dp"
         android:background="@drawable/greenplasticbottle"
         android:onClick="litterBtn"
         android:rotation="90"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/sandCastleBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seaWeedBtn" />
 
     <ImageButton
         android:id="@+id/ringsBtn"
         android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="505dp"
         android:layout_marginEnd="270dp"
-        android:layout_marginBottom="270dp"
+        android:layout_marginBottom="72dp"
         android:background="@drawable/beerholder"
         android:onClick="litterBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/canBtn" />
+        app:layout_constraintBottom_toTopOf="@+id/sandCastleBtn"
+        app:layout_constraintEnd_toStartOf="@+id/canBtn"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/canBtn"
@@ -77,25 +82,38 @@
 
     <ImageButton
         android:id="@+id/seaWeedBtn"
-        android:layout_width="128dp"
-        android:layout_height="103dp"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="536dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="536dp"
+        android:layout_marginEnd="273dp"
+        android:layout_marginBottom="82dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottleBtn"
+        app:layout_constraintEnd_toStartOf="@+id/shellsBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <ImageButton
         android:id="@+id/shellsBtn"
-        android:layout_width="110dp"
+        android:layout_width="0dp"
         android:layout_height="101dp"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        tools:layout_editor_absoluteX="440dp"
-        tools:layout_editor_absoluteY="574dp" />
+        android:layout_marginEnd="730dp"
+        android:layout_marginBottom="27dp"
+        app:layout_constraintBottom_toTopOf="@+id/sandCastleBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/seaWeedBtn"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <ImageButton
         android:id="@+id/sandCastleBtn"
-        android:layout_width="157dp"
-        android:layout_height="142dp"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        tools:layout_editor_absoluteX="600dp"
-        tools:layout_editor_absoluteY="702dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="523dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bottleBtn"
+        app:layout_constraintTop_toBottomOf="@+id/ringsBtn"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
 </androidx.constraintlayout.widget.ConstraintLayout>

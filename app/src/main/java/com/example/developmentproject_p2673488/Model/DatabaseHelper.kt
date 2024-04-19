@@ -1,6 +1,7 @@
 package com.example.developmentproject_p2673488.Model
 
 import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
@@ -69,6 +70,49 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
             db.close()
             return null
         }
+    }
+
+
+    @SuppressLint("Range")
+    fun getNonRubbish(name : String) : NonLitter? {
+        val db = readableDatabase
+
+        var sqlStatement ="SELECT * FROM $NRubbishTableName WHERE $NRubbishName = ?"
+
+        val param = arrayOf(name)
+        val cursor: Cursor = db.rawQuery(sqlStatement, param)
+
+        if(cursor.moveToFirst()){
+            val NRubbishName = cursor.getString(cursor.getColumnIndex(NRubbishName))
+            val NRubbishDesc = cursor.getString(cursor.getColumnIndex(NRubbishDescription))
+            val NRubbishVisible = cursor.getInt(cursor.getColumnIndex(NRubbishVisible))
+
+            val NRubbish = NonLitter(NRubbishName,NRubbishDesc,NRubbishVisible)
+            cursor.close()
+            db.close()
+            return NRubbish
+        } else{
+            cursor.close()
+            db.close()
+            return null
+        }
+    }
+
+    fun updateRubbishVis(name: String, value: Int){
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(RubbishVisible, value)
+        db.update(RubbishTableName, contentValues, "RubName = ?", arrayOf(name))
+        db.close()
+    }
+
+    //may not need
+    fun updateNonRubbishVis(name: String, value: Int){
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(NRubbishVisible, value)
+        db.update(NRubbishTableName, contentValues, "NRubName = ?", arrayOf(name))
+        db.close()
     }
 
 

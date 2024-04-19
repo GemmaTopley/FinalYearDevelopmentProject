@@ -16,6 +16,9 @@ class BeachLevel : AppCompatActivity() {
     private lateinit var ringsBtn: ImageButton
 
     private lateinit var newsBtn: ImageButton
+    private lateinit var seaWeedBtn: ImageButton
+    private lateinit var shellsButton: ImageButton
+    private lateinit var sandCastleBtn: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +67,45 @@ class BeachLevel : AppCompatActivity() {
 
 
         newsBtn = findViewById(R.id.newsBtn)
+        seaWeedBtn = findViewById(R.id.seaWeedBtn)
+        shellsButton = findViewById(R.id.shellsBtn)
+        sandCastleBtn = findViewById(R.id.sandCastleBtn)
+
+
         newsBtn.setOnClickListener{handleNonLitterClick("Newspaper")}
+        seaWeedBtn.setOnClickListener{handleNonLitterClick("Sea Weed")}
+        shellsButton.setOnClickListener{handleNonLitterClick("Shells")}
+        sandCastleBtn.setOnClickListener{handleNonLitterClick("Sand Castle")}
+
+        var newsDB = dbHelper.getNonRubbish("Newspaper")
+        var seaWeedDB = dbHelper.getNonRubbish("Sea Weed")
+        var shellsDB = dbHelper.getNonRubbish("Shells")
+        var sandCastleDB = dbHelper.getNonRubbish("Sand Castle")
+
+        if (newsDB != null) {
+            if(newsDB.NRubVisible.equals(0)){
+                newsBtn.visibility = View.INVISIBLE
+            }
+        }
+
+        if (seaWeedDB != null) {
+            if(seaWeedDB.NRubVisible.equals(0)){
+                seaWeedBtn.visibility = View.INVISIBLE
+            }
+        }
+
+        if (shellsDB != null) {
+            if(shellsDB.NRubVisible.equals(0)){
+                shellsButton.visibility = View.INVISIBLE
+            }
+        }
+
+        if (sandCastleDB != null) {
+            if(sandCastleDB.NRubVisible.equals(0)){
+                sandCastleBtn.visibility = View.INVISIBLE
+            }
+        }
+
 
     }
 
@@ -81,7 +122,7 @@ class BeachLevel : AppCompatActivity() {
         val dbHelper = DatabaseHelper(this)
         val nonLitter = dbHelper.getRubbish(nonLitterName)
         val intent = Intent(this, NonLitterPickup::class.java)
-        intent.putExtra("Litter", nonLitter)
+        intent.putExtra("NonLitter", nonLitter)
         startActivity(intent)
     }
 

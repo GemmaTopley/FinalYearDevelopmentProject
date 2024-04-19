@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import com.example.developmentproject_p2673488.Model.DatabaseHelper
 import com.example.developmentproject_p2673488.Model.Litter
 import kotlin.properties.Delegates
 
@@ -12,15 +13,21 @@ class LitterPickUp : AppCompatActivity() {
 
     lateinit var RubbishPick : String
     var RubbishVis by Delegates.notNull<Int>()
+    lateinit var RubbishName: String
+    lateinit var RubbishDesc: String
+
+    lateinit var dbHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_litter_pick_up)
 
+        dbHelper = DatabaseHelper(this)
+
         var selectedRubbish = (intent.getSerializableExtra("Litter") as Litter)
 
-        var RubbishName = selectedRubbish.RubName
-        var RubbishDesc = selectedRubbish.RubDescription
+        RubbishName = selectedRubbish.RubName
+        RubbishDesc = selectedRubbish.RubDescription
         RubbishPick = selectedRubbish.RubPickup
         RubbishVis = selectedRubbish.RubVisible
 
@@ -35,7 +42,7 @@ class LitterPickUp : AppCompatActivity() {
 
     fun GlovesBtn (view : View){
         if (RubbishPick.equals("Gloves")){
-            RubbishVis == 0
+            dbHelper.updateRubbishVis(RubbishName, 0)
             val intent = android.content.Intent(
                 this,
                 com.example.developmentproject_p2673488.BeachLevel::class.java)
@@ -51,7 +58,7 @@ class LitterPickUp : AppCompatActivity() {
 
     fun PickerBtn (view : View){
         if (RubbishPick.equals("Picker")){
-            RubbishVis == 0
+            dbHelper.updateRubbishVis(RubbishName, 0)
             val intent = android.content.Intent(
                 this,
                 com.example.developmentproject_p2673488.BeachLevel::class.java)
@@ -67,7 +74,7 @@ class LitterPickUp : AppCompatActivity() {
 
     fun adultBtn (view : View){
         if (RubbishPick.equals("Adult")){
-            RubbishVis == 0
+            dbHelper.updateRubbishVis(RubbishName, 0)
             val intent = android.content.Intent(
                 this,
                 com.example.developmentproject_p2673488.BeachLevel::class.java)
