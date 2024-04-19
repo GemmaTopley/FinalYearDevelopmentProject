@@ -9,6 +9,7 @@ class LevelSelect : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_level_select)
+
     }
 
     fun beachBtn (view : View){
