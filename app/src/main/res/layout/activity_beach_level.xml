@@ -74,4 +74,12 @@
         android:onClick="litterBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/nonLitterPlaceholder"
+        android:layout_width="128dp"
+        android:layout_height="103dp"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="536dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
