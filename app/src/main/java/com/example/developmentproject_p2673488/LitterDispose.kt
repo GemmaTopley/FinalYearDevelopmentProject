@@ -40,7 +40,7 @@ class LitterDispose : AppCompatActivity() {
 
     fun RecycleBtn(view: View){
         if (RubbishDispose.equals("Recycle")){
-            val intent = Intent(this,LitterDispose::class.java)
+            val intent = Intent(this,BeachLevel::class.java)
             startActivity(intent)
 
         }else{
@@ -51,7 +51,7 @@ class LitterDispose : AppCompatActivity() {
 
     fun GeneralBtn(view: View){
         if (RubbishDispose.equals("General Waste")){
-            val intent = Intent(this,LitterDispose::class.java)
+            val intent = Intent(this,BeachLevel::class.java)
             startActivity(intent)
 
         }else{
@@ -62,7 +62,7 @@ class LitterDispose : AppCompatActivity() {
 
     fun CompostBtn(view: View){
         if (RubbishDispose.equals("Compost")){
-            val intent = Intent(this,LitterDispose::class.java)
+            val intent = Intent(this,BeachLevel::class.java)
             startActivity(intent)
 
         }else{
