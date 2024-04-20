@@ -25,7 +25,7 @@ class ParentZone : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_parent_zone)
 
-        var dbHelper = DatabaseHelper(this)
+        dbHelper = DatabaseHelper(this)
 
         canCheck = findViewById(R.id.canCheck)
         bottleCheck = findViewById(R.id.bottleCheck)
@@ -93,49 +93,61 @@ class ParentZone : AppCompatActivity() {
             }
         }
 
+    }
 
-        canCheck.setOnCheckedChangeListener { buttonView, isChecked ->
-            updateRubbishDB("Can", if (isChecked) 1 else 0)
-            updateRubbishDBParent("Can", if (isChecked) 1 else 0)
-        }
-
-        bottleCheck.setOnCheckedChangeListener { buttonView, isChecked ->
-            updateRubbishDB("Bottle", if (isChecked) 1 else 0)
-            updateRubbishDBParent("Bottle", if (isChecked) 1 else 0)
-        }
-
-        glassCheck.setOnCheckedChangeListener { buttonView, isChecked ->
-            updateRubbishDB("Glass", if (isChecked) 1 else 0)
-            updateRubbishDBParent("Glass", if (isChecked) 1 else 0)
-        }
-
-        ringsCheck.setOnCheckedChangeListener { buttonView, isChecked ->
-            updateRubbishDB("Rings", if (isChecked) 1 else 0)
-            updateRubbishDBParent("Rings", if (isChecked) 1 else 0)
-        }
-
-        newspaperCheck.setOnCheckedChangeListener { buttonView, isChecked ->
-            updateNRubbishDB("Newspaper", if (isChecked) 1 else 0)
-            updateNRubbishDBParent("Newspaper", if (isChecked) 1 else 0)
-        }
-
-        seaweedCheck.setOnCheckedChangeListener { buttonView, isChecked ->
-            updateNRubbishDB("Sea Weed", if (isChecked) 1 else 0)
-            updateNRubbishDBParent("Sea Weed", if (isChecked) 1 else 0)
-        }
-
-        shellsCheck.setOnCheckedChangeListener { buttonView, isChecked ->
-            updateNRubbishDB("Shells", if (isChecked) 1 else 0)
-            updateNRubbishDBParent("Shells", if (isChecked) 1 else 0)
-        }
-        sandCastleCheck.setOnCheckedChangeListener { buttonView, isChecked ->
-            updateNRubbishDB("Sand Castle", if (isChecked) 1 else 0)
-            updateNRubbishDBParent("Sand Castle", if (isChecked) 1 else 0)
-        }
+    fun confirmBtn(view: View) {
+        updateRubbishDB("Can", if (canCheck.isChecked) 1 else 0)
+        updateRubbishDBParent("Can", if (canCheck.isChecked) 1 else 0)
+        dbHelper.updateRubbishClicked("Can", if (canCheck.isChecked) 0 else 1)
 
 
+        updateRubbishDB("Bottle", if (bottleCheck.isChecked) 1 else 0)
+        updateRubbishDBParent("Bottle", if (bottleCheck.isChecked) 1 else 0)
+        dbHelper.updateRubbishClicked("Bottle", if (canCheck.isChecked) 0 else 1)
+
+
+        updateRubbishDB("Glass", if (glassCheck.isChecked) 1 else 0)
+        updateRubbishDBParent("Glass", if (glassCheck.isChecked) 1 else 0)
+        dbHelper.updateRubbishClicked("Glass", if (canCheck.isChecked) 0 else 1)
+
+
+        updateRubbishDB("Rings", if (ringsCheck.isChecked) 1 else 0)
+        updateRubbishDBParent("Rings", if (ringsCheck.isChecked) 1 else 0)
+        dbHelper.updateRubbishClicked("Rings", if (canCheck.isChecked) 0 else 1)
+
+
+        updateNRubbishDB("Newspaper", if (newspaperCheck.isChecked) 1 else 0)
+        updateNRubbishDBParent("Newspaper", if (newspaperCheck.isChecked) 1 else 0)
+        dbHelper.updateRubbishClicked("Newspaper", if (canCheck.isChecked) 0 else 1)
+
+
+        updateNRubbishDB("Sea Weed", if (seaweedCheck.isChecked) 1 else 0)
+        updateNRubbishDBParent("Sea Weed", if (seaweedCheck.isChecked) 1 else 0)
+        dbHelper.updateRubbishClicked("Sea Weed", if (canCheck.isChecked) 0 else 1)
+
+
+        updateNRubbishDB("Shells", if (shellsCheck.isChecked) 1 else 0)
+        updateNRubbishDBParent("Shells", if (shellsCheck.isChecked) 1 else 0)
+        dbHelper.updateRubbishClicked("Shells", if (canCheck.isChecked) 0 else 1)
+
+        updateNRubbishDB("Sand Castle", if (sandCastleCheck.isChecked) 1 else 0)
+        updateNRubbishDBParent("Sand Castle", if (sandCastleCheck.isChecked) 1 else 0)
+        dbHelper.updateRubbishClicked("Sand Castle", if (canCheck.isChecked) 0 else 1)
+
+
+        dbHelper.getRubbish("Can")?.let { dbHelper.updateRubbishVis("Can", it.RubParent); dbHelper.updateRubbishClicked("Can", 0)}
+        dbHelper.getRubbish("Bottle")?.let { dbHelper.updateRubbishVis("Bottle", it.RubParent); dbHelper.updateRubbishClicked("Bottle", 0) }
+        dbHelper.getRubbish("Glass")?.let { dbHelper.updateRubbishVis("Glass", it.RubParent); dbHelper.updateRubbishClicked("Glass", 0) }
+        dbHelper.getRubbish("Rings")?.let { dbHelper.updateRubbishVis("Rings", it.RubParent); dbHelper.updateRubbishClicked("Rings", 0) }
+
+        dbHelper.getNonRubbish("Newspaper")?.let { dbHelper.updateRubbishVis("Newspaper", it.NRubParent); dbHelper.updateNonRubbishClicked("Newspaper", 0) }
+        dbHelper.getNonRubbish("Sea Weed")?.let { dbHelper.updateRubbishVis("Sea Weed", it.NRubParent); dbHelper.updateNonRubbishClicked("Sea Weed", 0) }
+        dbHelper.getNonRubbish("Shells")?.let { dbHelper.updateRubbishVis("Shells", it.NRubParent); dbHelper.updateNonRubbishClicked("Shells", 0) }
+        dbHelper.getNonRubbish("Sand Castle")?.let { dbHelper.updateRubbishVis("Sand Castle", it.NRubParent); dbHelper.updateNonRubbishClicked("Sand Castle", 0) }
 
     }
+
+
 
     private fun updateRubbishDB(item:String, checked: Int){
         var dbHelper = DatabaseHelper(this)
@@ -162,25 +174,28 @@ class ParentZone : AppCompatActivity() {
         startActivity(intent)
     }
 
+
+
     fun defaultBtn(view: View){
         dbHelper = DatabaseHelper(this)
 
-        dbHelper.getRubbish("Can")?.let { dbHelper.updateRubbishVis("Can", 1) }
+        dbHelper.getRubbish("Can")?.let { dbHelper.updateRubbishVis("Can", 1); dbHelper.updateRubbishClicked("Can", 0); updateRubbishDBParent("Can", 1)}
         canCheck.isChecked = true
-        dbHelper.getRubbish("Bottle")?.let { dbHelper.updateRubbishVis("Bottle", 1) }
+        dbHelper.getRubbish("Bottle")?.let { dbHelper.updateRubbishVis("Bottle", 1); dbHelper.updateRubbishClicked("Bottle", 0); updateRubbishDBParent("Bottle", 1) }
         bottleCheck.isChecked = true
-        dbHelper.getRubbish("Glass")?.let { dbHelper.updateRubbishVis("Glass", 0) }
+        dbHelper.getRubbish("Glass")?.let { dbHelper.updateRubbishVis("Glass", 0); dbHelper.updateRubbishClicked("Glass", 0); updateRubbishDBParent("Glass", 0) }
         glassCheck.isChecked = false
-        dbHelper.getRubbish("Rings")?.let { dbHelper.updateRubbishVis("Rings", 1) }
+        dbHelper.getRubbish("Rings")?.let { dbHelper.updateRubbishVis("Rings", 1); dbHelper.updateRubbishClicked("Rings", 0); updateRubbishDBParent("Rings", 1) }
         ringsCheck.isChecked = true
 
-        dbHelper.getNonRubbish("Newspaper")?.let { dbHelper.updateRubbishVis("Newspaper", 1) }
+        dbHelper.getNonRubbish("Newspaper")?.let { dbHelper.updateNonRubbishVis("Newspaper", 1); dbHelper.updateNonRubbishClicked("Newspaper", 0); updateNRubbishDBParent("Newspaper", 1) }
         newspaperCheck.isChecked = true
-        dbHelper.getNonRubbish("Sea Weed")?.let { dbHelper.updateRubbishVis("Sea Weed", 1) }
+        dbHelper.getNonRubbish("Sea Weed")?.let { dbHelper.updateNonRubbishVis("Sea Weed", 1); dbHelper.updateNonRubbishClicked("Sea Weed", 0); updateNRubbishDBParent("Sea Weed", 1) }
         seaweedCheck.isChecked = true
-        dbHelper.getNonRubbish("Shells")?.let { dbHelper.updateRubbishVis("Shells", 1) }
+        dbHelper.getNonRubbish("Shells")?.let { dbHelper.updateNonRubbishVis("Shells", 1); dbHelper.updateNonRubbishClicked("Shells", 0); updateNRubbishDBParent("Shells", 1) }
         shellsCheck.isChecked = true
-        dbHelper.getNonRubbish("Sand Castle")?.let { dbHelper.updateRubbishVis("Sand Castle", 1) }
+        dbHelper.getNonRubbish("Sand Castle")?.let { dbHelper.updateNonRubbishVis("Sand Castle", 1); dbHelper.updateNonRubbishClicked("Sand Castle", 0); updateNRubbishDBParent("Sand Castle", 1) }
         sandCastleCheck.isChecked = true
+
     }
 }

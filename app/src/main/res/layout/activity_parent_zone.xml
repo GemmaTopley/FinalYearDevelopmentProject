@@ -16,11 +16,26 @@
         android:backgroundTint="#9CCC65"
         android:fontFamily="@font/comic_neue_light"
         android:onClick="defaultBtn"
-        android:text="default"
+        android:text="Default"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/resetBtn3"
+        android:layout_width="175dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#9CCC65"
+        android:fontFamily="@font/comic_neue_light"
+        android:onClick="confirmBtn"
+        android:text="Confirm"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/seaweedCheck"
+        app:layout_constraintStart_toEndOf="@+id/glassCheck"
+        app:layout_constraintTop_toBottomOf="@+id/parentZoneDesc" />
 
     <CheckBox
         android:id="@+id/seaweedCheck"
@@ -85,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comic_neue_light"
-        android:text="Choose what items you want available to your child"
+        android:text="Choose what items you want available to your child, this will reset the levels"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/resetBtn2"
