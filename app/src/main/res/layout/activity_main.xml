@@ -11,52 +11,56 @@
         android:id="@+id/RubbishImg"
         android:layout_width="1281dp"
         android:layout_height="318dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/rubbishpile" />
+        app:srcCompat="@drawable/rubbishpile"
+        tools:layout_editor_absoluteY="582dp" />
 
     <ImageView
         android:id="@+id/RRTitle"
         android:layout_width="1020dp"
         android:layout_height="221dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="23dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rubbishremovaltext" />
+        app:srcCompat="@drawable/rubbishremovaltext"
+        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/PZBtn"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
         android:backgroundTint="#9CCC65"
         android:onClick="parentBtn"
         android:text="parent zone"
         android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/resetBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RRTitle" />
+        app:layout_constraintTop_toTopOf="@+id/resetBtn" />
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="50dp"
+        android:backgroundTint="#9CCC65"
+        android:onClick="resetBtn"
+        android:text="reset levels"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="256dp" />
 
     <ImageButton
         android:id="@+id/playBtn"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_marginStart="490dp"
         android:background="@drawable/playsun"
         android:onClick="playBtn"
-        app:layout_constraintBottom_toTopOf="@+id/RubbishImg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RRTitle" />
+        tools:layout_editor_absoluteX="490dp"
+        tools:layout_editor_absoluteY="260dp" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="223dp"
         android:layout_height="221dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/RRTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ecoearth1" />
+        app:srcCompat="@drawable/ecoearth1"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

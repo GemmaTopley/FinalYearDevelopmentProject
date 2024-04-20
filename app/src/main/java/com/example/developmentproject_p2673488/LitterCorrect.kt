@@ -7,38 +7,41 @@ import android.view.View
 import android.widget.TextView
 import com.example.developmentproject_p2673488.Model.DatabaseHelper
 import com.example.developmentproject_p2673488.Model.Litter
-import com.example.developmentproject_p2673488.Model.NonLitter
-import kotlin.properties.Delegates
 
-class NonLitterPickup : AppCompatActivity() {
+class LitterCorrect : AppCompatActivity() {
 
-    lateinit var NRubbishName: String
-    lateinit var NRubbishDesc: String
+    lateinit var RubbishDisposal: String
+    lateinit var RubbishDisposalInfo: String
+    lateinit var RubbishName: String
+
+    lateinit var selectedRubbish: Litter
 
     lateinit var dbHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_non_litter_pickup)
+        setContentView(R.layout.activity_litter_correct)
 
         dbHelper = DatabaseHelper(this)
 
-        var selectedRubbish = (intent.getSerializableExtra("NonLitter") as NonLitter)
+        selectedRubbish = (intent.getSerializableExtra("Litter") as Litter)
 
-        NRubbishName = selectedRubbish.NRubName
-        NRubbishDesc = selectedRubbish.NRubDescription
+        RubbishName = selectedRubbish.RubName
+        RubbishDisposal = selectedRubbish.RubDisposal
+        RubbishDisposalInfo = selectedRubbish.RubDisposalInfo
 
         var itemNameTxt = findViewById<TextView>(R.id.itemNameTxt)
         var itemDescTxt = findViewById<TextView>(R.id.itemDescTxt)
 
-        itemNameTxt.setText(NRubbishName)
-        itemDescTxt.setText(NRubbishDesc)
+        itemNameTxt.setText(RubbishDisposal)
+        itemDescTxt.setText(RubbishDisposalInfo)
+
+
     }
 
-
     fun okBtn (view : View){
+        dbHelper.updateRubbishVis(RubbishName, 0)
         val intent = Intent(this, BeachLevel::class.java)
         startActivity(intent)
     }
-
 }

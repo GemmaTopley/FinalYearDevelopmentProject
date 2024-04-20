@@ -45,9 +45,7 @@ class LitterPickUp : AppCompatActivity() {
 
     fun GlovesBtn (view : View){
         if (RubbishPick.equals("Gloves")){
-            //dbHelper.updateRubbishVis(RubbishName, 0)
             val litter = dbHelper.getRubbish(selectedRubbish.RubName)
-            //Log.d("GlovesBtn", "Value of litter: $litter")
             val intent = Intent(this,LitterDispose::class.java)
             intent.putExtra("Litter", litter)
             startActivity(intent)
@@ -62,9 +60,7 @@ class LitterPickUp : AppCompatActivity() {
 
     fun PickerBtn (view : View){
         if (RubbishPick.equals("Picker")){
-            //dbHelper.updateRubbishVis(RubbishName, 0)
             val litter = dbHelper.getRubbish(selectedRubbish.RubName)
-            //Log.d("PickerBtn", "Value of litter: $litter")
             val intent = Intent(this,LitterDispose::class.java)
             intent.putExtra("Litter", litter)
             startActivity(intent)
@@ -79,9 +75,7 @@ class LitterPickUp : AppCompatActivity() {
 
     fun adultBtn (view : View){
         if (RubbishPick.equals("Adult")){
-            //dbHelper.updateRubbishVis(RubbishName, 0)
             val litter = dbHelper.getRubbish(selectedRubbish.RubName)
-            //Log.d("AdultBtn", "Value of litter: $litter")
             val intent = Intent(this,LitterDispose::class.java)
             intent.putExtra("Litter", litter)
             startActivity(intent)

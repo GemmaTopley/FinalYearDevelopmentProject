@@ -15,6 +15,8 @@ class LitterDispose : AppCompatActivity() {
     lateinit var RubbishDispose: String
     lateinit var RubbishDesc: String
 
+    lateinit var selectedRubbish: Litter
+
     lateinit var dbHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,8 +25,7 @@ class LitterDispose : AppCompatActivity() {
 
         dbHelper = DatabaseHelper(this)
 
-        val selectedRubbish = (intent.getSerializableExtra("Litter") as Litter)
-        Log.d("selectedRubbish", "Value of litter: $selectedRubbish")
+        selectedRubbish = (intent.getSerializableExtra("Litter") as Litter)
 
         RubbishName = selectedRubbish.RubName
         RubbishDesc = selectedRubbish.RubDescription
@@ -40,7 +41,9 @@ class LitterDispose : AppCompatActivity() {
 
     fun RecycleBtn(view: View){
         if (RubbishDispose.equals("Recycle")){
-            val intent = Intent(this,BeachLevel::class.java)
+            val litter = dbHelper.getRubbish(selectedRubbish.RubName)
+            val intent = Intent(this,LitterCorrect::class.java)
+            intent.putExtra("Litter", litter)
             startActivity(intent)
 
         }else{
@@ -51,7 +54,9 @@ class LitterDispose : AppCompatActivity() {
 
     fun GeneralBtn(view: View){
         if (RubbishDispose.equals("General Waste")){
-            val intent = Intent(this,BeachLevel::class.java)
+            val litter = dbHelper.getRubbish(selectedRubbish.RubName)
+            val intent = Intent(this,LitterCorrect::class.java)
+            intent.putExtra("Litter", litter)
             startActivity(intent)
 
         }else{
@@ -62,7 +67,9 @@ class LitterDispose : AppCompatActivity() {
 
     fun CompostBtn(view: View){
         if (RubbishDispose.equals("Compost")){
-            val intent = Intent(this,BeachLevel::class.java)
+            val litter = dbHelper.getRubbish(selectedRubbish.RubName)
+            val intent = Intent(this,LitterCorrect::class.java)
+            intent.putExtra("Litter", litter)
             startActivity(intent)
 
         }else{

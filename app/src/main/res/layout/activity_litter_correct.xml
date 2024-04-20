@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F9FBE7"
-    tools:context=".NonLitterPickup">
-
+    tools:context=".LitterCorrect">
 
     <TextView
         android:id="@+id/itemNameTxt"
