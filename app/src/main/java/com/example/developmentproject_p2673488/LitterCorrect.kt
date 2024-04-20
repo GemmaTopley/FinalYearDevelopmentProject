@@ -41,6 +41,7 @@ class LitterCorrect : AppCompatActivity() {
 
     fun okBtn (view : View){
         dbHelper.updateRubbishVis(RubbishName, 0)
+        dbHelper.updateRubbishClicked(RubbishName, 1)
         val intent = Intent(this, BeachLevel::class.java)
         startActivity(intent)
     }

@@ -7,15 +7,32 @@
     android:background="#E8F5E9"
     tools:context=".ParentZone">
 
+    <Button
+        android:id="@+id/resetBtn2"
+        android:layout_width="163dp"
+        android:layout_height="148dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="#9CCC65"
+        android:fontFamily="@font/comic_neue_light"
+        android:onClick="defaultBtn"
+        android:text="default"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <CheckBox
         android:id="@+id/seaweedCheck"
         android:layout_width="240dp"
         android:layout_height="83dp"
+        android:layout_marginTop="83dp"
         android:fontFamily="@font/comic_neue_light"
         android:text="Seaweed"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/sandCastleCheck"
+        app:layout_constraintStart_toEndOf="@+id/glassCheck"
         app:layout_constraintStart_toStartOf="@+id/sandCastleCheck"
         app:layout_constraintTop_toBottomOf="@+id/parentZoneDesc"
         app:layout_constraintVertical_bias="0.5" />
@@ -29,6 +46,7 @@
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/newspaperCheck"
+        app:layout_constraintStart_toEndOf="@+id/canCheck"
         app:layout_constraintStart_toStartOf="@+id/newspaperCheck"
         app:layout_constraintTop_toBottomOf="@+id/seaweedCheck"
         app:layout_constraintVertical_bias="0.5" />
@@ -42,21 +60,22 @@
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/shellsCheck"
+        app:layout_constraintStart_toEndOf="@+id/bottleCheck"
         app:layout_constraintStart_toStartOf="@+id/shellsCheck"
         app:layout_constraintTop_toBottomOf="@+id/sandCastleCheck"
         app:layout_constraintVertical_bias="0.5" />
 
     <CheckBox
         android:id="@+id/shellsCheck"
-        android:layout_width="0dp"
+        android:layout_width="176dp"
         android:layout_height="83dp"
-        android:layout_marginEnd="351dp"
         android:fontFamily="@font/comic_neue_light"
         android:text="Shells"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/ringsCheck"
         app:layout_constraintTop_toBottomOf="@+id/newspaperCheck"
         app:layout_constraintVertical_bias="0.5" />
@@ -69,22 +88,22 @@
         android:text="Choose what items you want available to your child"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/parentZoneTitle"
-        app:layout_constraintStart_toStartOf="@+id/parentZoneTitle"
+        app:layout_constraintEnd_toStartOf="@+id/resetBtn2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/homeBtn"
         app:layout_constraintTop_toBottomOf="@+id/parentZoneTitle" />
 
     <TextView
         android:id="@+id/parentZoneTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="230dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="384dp"
         android:fontFamily="@font/comic_neue_light"
         android:text="Parent Zone"
         android:textSize="96sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/resetBtn2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/homeBtn"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -103,6 +122,7 @@
         android:id="@+id/glassCheck"
         android:layout_width="176dp"
         android:layout_height="83dp"
+        android:layout_marginTop="83dp"
         android:fontFamily="@font/comic_neue_light"
         android:text="Glass"
         android:textSize="48sp"
@@ -114,16 +134,15 @@
 
     <CheckBox
         android:id="@+id/ringsCheck"
-        android:layout_width="0dp"
+        android:layout_width="176dp"
         android:layout_height="83dp"
-        android:layout_marginStart="279dp"
-        android:layout_marginEnd="298dp"
         android:fontFamily="@font/comic_neue_light"
         android:text="Rings"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/shellsCheck"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottleCheck"
         app:layout_constraintVertical_bias="0.5" />
@@ -132,7 +151,6 @@
         android:id="@+id/bottleCheck"
         android:layout_width="176dp"
         android:layout_height="83dp"
-        android:layout_marginStart="8dp"
         android:fontFamily="@font/comic_neue_light"
         android:text="Bottle"
         android:textSize="48sp"
@@ -146,7 +164,6 @@
         android:id="@+id/canCheck"
         android:layout_width="176dp"
         android:layout_height="83dp"
-        android:layout_marginStart="4dp"
         android:fontFamily="@font/comic_neue_light"
         android:text="Can"
         android:textSize="48sp"

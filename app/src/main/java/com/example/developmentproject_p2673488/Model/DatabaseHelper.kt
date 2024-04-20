@@ -21,6 +21,7 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
     private val RubbishParent = "ParentChoice"
     private val RubbishDisposal = "RubDisposal"
     private val RubbishDisposalInfo = "RubDisposalInfo"
+    private val RubbishClicked = "RubClicked"
 
 
 
@@ -30,11 +31,13 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
     private val NRubbishDescription = "NRubDescription"
     private val NRubbishVisible = "NRubVisible"
     private val NRubbishParent = "ParentChoice"
+    private val NRubbishClicked = "NRubClicked"
 
 
     override fun onCreate(db: SQLiteDatabase?) {
         var sqlCreateStatementRubbish: String = "CREATE TABLE IF NOT EXISTS $RubbishTableName ( $RubbishName TEXT, $RubbishDescription TEXT, " +
-                " $RubbishVisible TEXT, " + " $RubbishPickUp TEXT, "+" $RubbishParent INT, "+" $RubbishDisposal TEXT, "+" $RubbishDisposalInfo TEXT )"
+                " $RubbishVisible TEXT, " + " $RubbishPickUp TEXT, "+" $RubbishParent INT, "+" $RubbishDisposal TEXT, "+" $RubbishDisposalInfo TEXT, " +
+                " $RubbishClicked INT, "+" $RubbishClicked INT )"
 
         db?.execSQL(sqlCreateStatementRubbish)
 
@@ -68,10 +71,11 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
             val rubbishParent = cursor.getInt(cursor.getColumnIndex(RubbishParent))
             val rubbishDisposal = cursor.getString(cursor.getColumnIndex(RubbishDisposal))
             val rubbishDisposalInfo = cursor.getString(cursor.getColumnIndex(RubbishDisposalInfo))
+            val rubbishClicked = cursor.getInt(cursor.getColumnIndex(RubbishClicked))
 
 
 
-            val rubbish = Litter(rubbishName,rubbishDesc,rubbishVisible,rubbishPickup, rubbishParent, rubbishDisposal, rubbishDisposalInfo)
+            val rubbish = Litter(rubbishName,rubbishDesc,rubbishVisible,rubbishPickup, rubbishParent, rubbishDisposal, rubbishDisposalInfo, rubbishClicked)
             cursor.close()
             db.close()
             return rubbish
@@ -97,8 +101,9 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
             val NRubbishDesc = cursor.getString(cursor.getColumnIndex(NRubbishDescription))
             val NRubbishVisible = cursor.getInt(cursor.getColumnIndex(NRubbishVisible))
             val NRubbishParent = cursor.getInt(cursor.getColumnIndex(NRubbishParent))
+            val NRubbishClicked = cursor.getInt(cursor.getColumnIndex(NRubbishClicked))
 
-            val NRubbish = NonLitter(NRubbishName,NRubbishDesc,NRubbishVisible, NRubbishParent)
+            val NRubbish = NonLitter(NRubbishName,NRubbishDesc,NRubbishVisible, NRubbishParent, NRubbishClicked)
             cursor.close()
             db.close()
             return NRubbish
@@ -140,6 +145,42 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
         db.update(NRubbishTableName, contentValues, "NRubName = ?", arrayOf(name))
         db.close()
     }
+
+    fun updateRubbishClicked(name: String, value: Int){
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(RubbishClicked, value)
+        db.update(RubbishTableName, contentValues, "RubName = ?", arrayOf(name))
+        db.close()
+    }
+
+    fun updateNonRubbishClicked(name: String, value: Int){
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(NRubbishClicked, value)
+        db.update(NRubbishTableName, contentValues, "NRubName = ?", arrayOf(name))
+        db.close()
+    }
+
+    @SuppressLint("Range")
+    fun allClicked(table: String, column: String): Boolean{
+        val db = this.readableDatabase
+        val cursor: Cursor? = db.query(table, arrayOf(column), null,null,null,null,null)
+        cursor?.use{
+            while (cursor.moveToNext()){
+                val element = cursor.getInt(cursor.getColumnIndex(column))
+                if (element != 1){
+                    cursor.close()
+                    db.close()
+                    return false
+                }
+            }
+        }
+        cursor?.close()
+        db.close()
+        return true
+    }
+
 
 
 }

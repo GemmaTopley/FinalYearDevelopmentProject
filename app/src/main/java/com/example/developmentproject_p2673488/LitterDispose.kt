@@ -49,6 +49,7 @@ class LitterDispose : AppCompatActivity() {
         }else{
             var pickError = findViewById<TextView>(R.id.pickErrorTxt)
             pickError.visibility = View.VISIBLE
+            dbHelper.updateRubbishClicked(RubbishName, 1)
         }
     }
 
@@ -62,6 +63,7 @@ class LitterDispose : AppCompatActivity() {
         }else{
             var pickError = findViewById<TextView>(R.id.pickErrorTxt)
             pickError.visibility = View.VISIBLE
+            dbHelper.updateRubbishClicked(RubbishName, 1)
         }
     }
 
@@ -75,6 +77,7 @@ class LitterDispose : AppCompatActivity() {
         }else{
             var pickError = findViewById<TextView>(R.id.pickErrorTxt)
             pickError.visibility = View.VISIBLE
+            dbHelper.updateRubbishClicked(RubbishName, 1)
         }
     }
 }

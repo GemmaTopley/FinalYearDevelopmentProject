@@ -44,24 +44,31 @@ class BeachLevel : AppCompatActivity() {
         if (canDB != null) {
             if(canDB.RubVisible.equals(0)){
                 canBtn.visibility = View.INVISIBLE
+                dbHelper.updateRubbishClicked("Can", 1)
             }
         }
 
         if (bottleDB != null) {
             if(bottleDB.RubVisible.equals(0)){
                 bottleBtn.visibility = View.INVISIBLE
+                dbHelper.updateRubbishClicked("Bottle", 1)
+
             }
         }
 
         if (glassDB != null) {
             if(glassDB.RubVisible.equals(0)){
                 glassBtn.visibility = View.INVISIBLE
+                dbHelper.updateRubbishClicked("Glass", 1)
+
             }
         }
 
         if (ringsDB != null) {
             if(ringsDB.RubVisible.equals(0)){
                 ringsBtn.visibility = View.INVISIBLE
+                dbHelper.updateRubbishClicked("Rings", 1)
+
             }
         }
 
@@ -84,25 +91,35 @@ class BeachLevel : AppCompatActivity() {
         if (newsDB != null) {
             if(newsDB.NRubVisible.equals(0)){
                 newsBtn.visibility = View.INVISIBLE
+                dbHelper.updateNonRubbishClicked("Newspaper", 1)
             }
         }
 
         if (seaWeedDB != null) {
             if(seaWeedDB.NRubVisible.equals(0)){
                 seaWeedBtn.visibility = View.INVISIBLE
+                dbHelper.updateNonRubbishClicked("Sea Weed", 1)
             }
         }
 
         if (shellsDB != null) {
             if(shellsDB.NRubVisible.equals(0)){
                 shellsButton.visibility = View.INVISIBLE
+                dbHelper.updateNonRubbishClicked("Shells", 1)
             }
         }
 
         if (sandCastleDB != null) {
             if(sandCastleDB.NRubVisible.equals(0)){
                 sandCastleBtn.visibility = View.INVISIBLE
+                dbHelper.updateNonRubbishClicked("Sand Castle", 1)
             }
+        }
+
+
+        if (dbHelper.allClicked("TRubbish", "RubClicked") && dbHelper.allClicked("TNonRubbish", "NRubClicked")){
+            val intent = Intent(this, FinishedLevelBeach::class.java)
+            startActivity(intent)
         }
 
 

@@ -18,6 +18,9 @@ class ParentZone : AppCompatActivity() {
     private lateinit var shellsCheck: CheckBox
     private lateinit var sandCastleCheck: CheckBox
 
+    lateinit var dbHelper: DatabaseHelper
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_parent_zone)
@@ -157,5 +160,27 @@ class ParentZone : AppCompatActivity() {
     fun homeBtn (view : View){
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+    }
+
+    fun defaultBtn(view: View){
+        dbHelper = DatabaseHelper(this)
+
+        dbHelper.getRubbish("Can")?.let { dbHelper.updateRubbishVis("Can", 1) }
+        canCheck.isChecked = true
+        dbHelper.getRubbish("Bottle")?.let { dbHelper.updateRubbishVis("Bottle", 1) }
+        bottleCheck.isChecked = true
+        dbHelper.getRubbish("Glass")?.let { dbHelper.updateRubbishVis("Glass", 0) }
+        glassCheck.isChecked = false
+        dbHelper.getRubbish("Rings")?.let { dbHelper.updateRubbishVis("Rings", 1) }
+        ringsCheck.isChecked = true
+
+        dbHelper.getNonRubbish("Newspaper")?.let { dbHelper.updateRubbishVis("Newspaper", 1) }
+        newspaperCheck.isChecked = true
+        dbHelper.getNonRubbish("Sea Weed")?.let { dbHelper.updateRubbishVis("Sea Weed", 1) }
+        seaweedCheck.isChecked = true
+        dbHelper.getNonRubbish("Shells")?.let { dbHelper.updateRubbishVis("Shells", 1) }
+        shellsCheck.isChecked = true
+        dbHelper.getNonRubbish("Sand Castle")?.let { dbHelper.updateRubbishVis("Sand Castle", 1) }
+        sandCastleCheck.isChecked = true
     }
 }
