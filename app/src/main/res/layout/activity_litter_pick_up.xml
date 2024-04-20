@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/glovesBtn"
+        android:id="@+id/RecycleBtn"
         android:layout_width="200dp"
         android:layout_height="150dp"
         android:fontFamily="@font/comic_neue_light"
@@ -48,40 +48,40 @@
         android:text="Gloves"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/pickerBtn"
+        app:layout_constraintEnd_toStartOf="@+id/generalBtn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemDescTxt"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/pickerBtn"
+        android:id="@+id/generalBtn"
         android:layout_width="200dp"
         android:layout_height="150dp"
         android:fontFamily="@font/comic_neue_light"
         android:onClick="PickerBtn"
         android:text="Litter Picker"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/glovesBtn"
-        app:layout_constraintEnd_toStartOf="@+id/adultBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/RecycleBtn"
+        app:layout_constraintEnd_toStartOf="@+id/CompostBtn"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/glovesBtn"
-        app:layout_constraintTop_toTopOf="@+id/glovesBtn"
+        app:layout_constraintStart_toEndOf="@+id/RecycleBtn"
+        app:layout_constraintTop_toTopOf="@+id/RecycleBtn"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/adultBtn"
+        android:id="@+id/CompostBtn"
         android:layout_width="200dp"
         android:layout_height="150dp"
         android:fontFamily="@font/comic_neue_light"
         android:onClick="adultBtn"
         android:text="Get an Adult"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/pickerBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/generalBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/pickerBtn"
-        app:layout_constraintTop_toTopOf="@+id/pickerBtn"
+        app:layout_constraintStart_toEndOf="@+id/generalBtn"
+        app:layout_constraintTop_toTopOf="@+id/generalBtn"
         app:layout_constraintVertical_bias="0.5" />
 
     <TextView
@@ -93,7 +93,7 @@
         android:textColor="#FF0000"
         android:textSize="24sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/pickerBtn"
+        app:layout_constraintBottom_toTopOf="@+id/generalBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

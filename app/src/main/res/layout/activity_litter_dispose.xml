@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F9FBE7"
-    tools:context=".NonLitterPickup">
-
+    tools:context=".LitterDispose">
 
     <TextView
         android:id="@+id/itemNameTxt"
@@ -33,7 +32,7 @@
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/generalBtn"
+        app:layout_constraintBottom_toTopOf="@+id/pickErrorTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,14 +40,60 @@
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
+        android:id="@+id/RecycleBtn"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:fontFamily="@font/comic_neue_light"
+        android:onClick="recycleBtn"
+        android:text="Recycle"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/generalBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemDescTxt"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
         android:id="@+id/generalBtn"
         android:layout_width="200dp"
         android:layout_height="150dp"
         android:fontFamily="@font/comic_neue_light"
-        android:onClick="okBtn"
-        android:text="OK"
+        android:onClick="generalBtn"
+        android:text="General Waste"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/RecycleBtn"
+        app:layout_constraintEnd_toStartOf="@+id/CompostBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/RecycleBtn"
+        app:layout_constraintTop_toTopOf="@+id/RecycleBtn"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/CompostBtn"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:fontFamily="@font/comic_neue_light"
+        android:onClick="compostBtn"
+        android:text="Compost"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/generalBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/generalBtn"
+        app:layout_constraintTop_toTopOf="@+id/generalBtn"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/pickErrorTxt"
+        android:layout_width="814dp"
+        android:layout_height="86dp"
+        android:text="Wrong choice - Try again"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/generalBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

@@ -39,7 +39,7 @@ class NonLitterPickup : AppCompatActivity() {
 
 
     fun okBtn (view : View){
-        val intent = Intent(this, BeachInstructions::class.java)
+        val intent = Intent(this, BeachLevel::class.java)
         startActivity(intent)
     }
 

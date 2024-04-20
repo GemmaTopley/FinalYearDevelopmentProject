@@ -7,7 +7,6 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-
 private val DataBaseName = "RubbishRemovalDatabase.db"
 private val ver : Int = 1
 
@@ -19,22 +18,24 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
     private val RubbishDescription = "RubDescription"
     private val RubbishVisible = "RubVisible"
     private val RubbishPickUp = "RubPickup"
+    private val RubbishParent = "ParentChoice"
 
     /* Non Rubbish Table */
     private val NRubbishTableName = "TNonRubbish"
     private val NRubbishName = "NRubName"
     private val NRubbishDescription = "NRubDescription"
     private val NRubbishVisible = "NRubVisible"
+    private val NRubbishParent = "ParentChoice"
 
 
     override fun onCreate(db: SQLiteDatabase?) {
         var sqlCreateStatementRubbish: String = "CREATE TABLE IF NOT EXISTS $RubbishTableName ( $RubbishName TEXT, $RubbishDescription TEXT, " +
-                " $RubbishVisible TEXT, " + " $RubbishPickUp TEXT )"
+                " $RubbishVisible TEXT, " + " $RubbishPickUp TEXT, "+" $RubbishParent INT )"
 
         db?.execSQL(sqlCreateStatementRubbish)
 
         var sqlCreateStatementNRubbish: String = "CREATE TABLE IF NOT EXISTS $NRubbishTableName ( $NRubbishName TEXT, $NRubbishDescription TEXT, " +
-                " $NRubbishVisible TEXT )"
+                " $NRubbishVisible TEXT, "+" $NRubbishParent INT  )"
 
         db?.execSQL(sqlCreateStatementNRubbish)
     }
@@ -60,8 +61,9 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
             val rubbishDesc = cursor.getString(cursor.getColumnIndex(RubbishDescription))
             val rubbishVisible = cursor.getInt(cursor.getColumnIndex(RubbishVisible))
             val rubbishPickup = cursor.getString(cursor.getColumnIndex(RubbishPickUp))
+            val rubbishParent = cursor.getInt(cursor.getColumnIndex(RubbishParent))
 
-            val rubbish = Litter(rubbishName,rubbishDesc,rubbishVisible,rubbishPickup)
+            val rubbish = Litter(rubbishName,rubbishDesc,rubbishVisible,rubbishPickup, rubbishParent)
             cursor.close()
             db.close()
             return rubbish
@@ -86,8 +88,9 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
             val NRubbishName = cursor.getString(cursor.getColumnIndex(NRubbishName))
             val NRubbishDesc = cursor.getString(cursor.getColumnIndex(NRubbishDescription))
             val NRubbishVisible = cursor.getInt(cursor.getColumnIndex(NRubbishVisible))
+            val NRubbishParent = cursor.getInt(cursor.getColumnIndex(NRubbishParent))
 
-            val NRubbish = NonLitter(NRubbishName,NRubbishDesc,NRubbishVisible)
+            val NRubbish = NonLitter(NRubbishName,NRubbishDesc,NRubbishVisible, NRubbishParent)
             cursor.close()
             db.close()
             return NRubbish
@@ -106,11 +109,26 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
         db.close()
     }
 
-    //may not need
     fun updateNonRubbishVis(name: String, value: Int){
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put(NRubbishVisible, value)
+        db.update(NRubbishTableName, contentValues, "NRubName = ?", arrayOf(name))
+        db.close()
+    }
+
+    fun updateRubbishVisParent(name: String, value: Int){
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(RubbishParent, value)
+        db.update(RubbishTableName, contentValues, "RubName = ?", arrayOf(name))
+        db.close()
+    }
+
+    fun updateNonRubbishVisParent(name: String, value: Int){
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(NRubbishParent, value)
         db.update(NRubbishTableName, contentValues, "NRubName = ?", arrayOf(name))
         db.close()
     }

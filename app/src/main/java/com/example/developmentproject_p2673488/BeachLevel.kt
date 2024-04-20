@@ -71,7 +71,6 @@ class BeachLevel : AppCompatActivity() {
         shellsButton = findViewById(R.id.shellsBtn)
         sandCastleBtn = findViewById(R.id.sandCastleBtn)
 
-
         newsBtn.setOnClickListener{handleNonLitterClick("Newspaper")}
         seaWeedBtn.setOnClickListener{handleNonLitterClick("Sea Weed")}
         shellsButton.setOnClickListener{handleNonLitterClick("Shells")}
@@ -112,7 +111,6 @@ class BeachLevel : AppCompatActivity() {
     private fun handleLitterClick(litterName: String){
         val dbHelper = DatabaseHelper(this)
         val litter = dbHelper.getRubbish(litterName)
-
         val intent = Intent(this, LitterPickUp::class.java)
         intent.putExtra("Litter", litter)
         startActivity(intent)
@@ -120,14 +118,14 @@ class BeachLevel : AppCompatActivity() {
 
     private fun handleNonLitterClick(nonLitterName: String){
         val dbHelper = DatabaseHelper(this)
-        val nonLitter = dbHelper.getRubbish(nonLitterName)
+        val nonLitter = dbHelper.getNonRubbish(nonLitterName)
         val intent = Intent(this, NonLitterPickup::class.java)
         intent.putExtra("NonLitter", nonLitter)
         startActivity(intent)
     }
 
     fun backBtn (view : View){
-        val intent = Intent(this, BeachInstructions::class.java)
+        val intent = Intent(this, LevelSelect::class.java)
         startActivity(intent)
     }
 }
