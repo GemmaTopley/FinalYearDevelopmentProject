@@ -3,6 +3,7 @@ package com.example.developmentproject_p2673488
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import com.example.developmentproject_p2673488.Model.DatabaseHelper
@@ -16,6 +17,8 @@ class LitterPickUp : AppCompatActivity() {
     lateinit var RubbishName: String
     lateinit var RubbishDesc: String
 
+    lateinit var selectedRubbish: Litter
+
     lateinit var dbHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +27,7 @@ class LitterPickUp : AppCompatActivity() {
 
         dbHelper = DatabaseHelper(this)
 
-        var selectedRubbish = (intent.getSerializableExtra("Litter") as Litter)
+        selectedRubbish = (intent.getSerializableExtra("Litter") as Litter)
 
         RubbishName = selectedRubbish.RubName
         RubbishDesc = selectedRubbish.RubDescription
@@ -42,10 +45,11 @@ class LitterPickUp : AppCompatActivity() {
 
     fun GlovesBtn (view : View){
         if (RubbishPick.equals("Gloves")){
-            dbHelper.updateRubbishVis(RubbishName, 0)
-            val intent = android.content.Intent(
-                this,
-                com.example.developmentproject_p2673488.BeachLevel::class.java)
+            //dbHelper.updateRubbishVis(RubbishName, 0)
+            val litter = dbHelper.getRubbish(selectedRubbish.RubName)
+            //Log.d("GlovesBtn", "Value of litter: $litter")
+            val intent = Intent(this,LitterDispose::class.java)
+            intent.putExtra("Litter", litter)
             startActivity(intent)
 
         }else{
@@ -58,10 +62,11 @@ class LitterPickUp : AppCompatActivity() {
 
     fun PickerBtn (view : View){
         if (RubbishPick.equals("Picker")){
-            dbHelper.updateRubbishVis(RubbishName, 0)
-            val intent = android.content.Intent(
-                this,
-                com.example.developmentproject_p2673488.BeachLevel::class.java)
+            //dbHelper.updateRubbishVis(RubbishName, 0)
+            val litter = dbHelper.getRubbish(selectedRubbish.RubName)
+            //Log.d("PickerBtn", "Value of litter: $litter")
+            val intent = Intent(this,LitterDispose::class.java)
+            intent.putExtra("Litter", litter)
             startActivity(intent)
 
         }else{
@@ -74,10 +79,11 @@ class LitterPickUp : AppCompatActivity() {
 
     fun adultBtn (view : View){
         if (RubbishPick.equals("Adult")){
-            dbHelper.updateRubbishVis(RubbishName, 0)
-            val intent = android.content.Intent(
-                this,
-                com.example.developmentproject_p2673488.BeachLevel::class.java)
+            //dbHelper.updateRubbishVis(RubbishName, 0)
+            val litter = dbHelper.getRubbish(selectedRubbish.RubName)
+            //Log.d("AdultBtn", "Value of litter: $litter")
+            val intent = Intent(this,LitterDispose::class.java)
+            intent.putExtra("Litter", litter)
             startActivity(intent)
 
         }else{

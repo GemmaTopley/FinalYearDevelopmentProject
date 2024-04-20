@@ -19,6 +19,10 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
     private val RubbishVisible = "RubVisible"
     private val RubbishPickUp = "RubPickup"
     private val RubbishParent = "ParentChoice"
+    private val RubbishDisposal = "RubDisposal"
+    private val RubbishDisposalInfo = "RubDisposalInfo"
+
+
 
     /* Non Rubbish Table */
     private val NRubbishTableName = "TNonRubbish"
@@ -30,7 +34,7 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
 
     override fun onCreate(db: SQLiteDatabase?) {
         var sqlCreateStatementRubbish: String = "CREATE TABLE IF NOT EXISTS $RubbishTableName ( $RubbishName TEXT, $RubbishDescription TEXT, " +
-                " $RubbishVisible TEXT, " + " $RubbishPickUp TEXT, "+" $RubbishParent INT )"
+                " $RubbishVisible TEXT, " + " $RubbishPickUp TEXT, "+" $RubbishParent INT, "+" $RubbishDisposal TEXT, "+" $RubbishDisposalInfo TEXT )"
 
         db?.execSQL(sqlCreateStatementRubbish)
 
@@ -62,8 +66,12 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
             val rubbishVisible = cursor.getInt(cursor.getColumnIndex(RubbishVisible))
             val rubbishPickup = cursor.getString(cursor.getColumnIndex(RubbishPickUp))
             val rubbishParent = cursor.getInt(cursor.getColumnIndex(RubbishParent))
+            val rubbishDisposal = cursor.getString(cursor.getColumnIndex(RubbishDisposal))
+            val rubbishDisposalInfo = cursor.getString(cursor.getColumnIndex(RubbishDisposalInfo))
 
-            val rubbish = Litter(rubbishName,rubbishDesc,rubbishVisible,rubbishPickup, rubbishParent)
+
+
+            val rubbish = Litter(rubbishName,rubbishDesc,rubbishVisible,rubbishPickup, rubbishParent, rubbishDisposal, rubbishDisposalInfo)
             cursor.close()
             db.close()
             return rubbish
