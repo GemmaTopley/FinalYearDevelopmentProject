@@ -33,7 +33,7 @@
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/pickerBtn"
+        app:layout_constraintBottom_toTopOf="@+id/okBtnNL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,9 +41,10 @@
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/pickerBtn"
+        android:id="@+id/okBtnNL"
         android:layout_width="200dp"
         android:layout_height="150dp"
+        android:backgroundTint="#9CCC65"
         android:fontFamily="@font/comic_neue_light"
         android:onClick="okBtn"
         android:text="OK"

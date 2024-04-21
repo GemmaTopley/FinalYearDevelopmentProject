@@ -220,6 +220,34 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
         }
     }
 
+    @SuppressLint("Range")
+    fun getAverageRating() : Double {
+        val db = readableDatabase
+
+        var sqlStatement = "SELECT * FROM $RatingTableName"
+        val cursor: Cursor = db.rawQuery(sqlStatement, null)
+        var totalStars = 0.0
+        var totalRatings = 0.0
+
+        if(cursor.moveToFirst()) {
+            do {
+                val stars = cursor.getInt(cursor.getColumnIndex(RatingStars))
+                totalStars += stars
+                totalRatings++
+            } while (cursor.moveToNext())
+        }
+
+        cursor.close()
+        db.close()
+
+        return if (totalRatings > 0) {
+            totalStars / totalRatings
+        } else {
+            0.0
+        }
+    }
+
+
     fun addRating(value: Int){
         val db = this.writableDatabase
         val contentValues = ContentValues()
