@@ -146,7 +146,7 @@ class BeachLevel : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, LevelSelect::class.java)
         startActivity(intent)
     }
 }
