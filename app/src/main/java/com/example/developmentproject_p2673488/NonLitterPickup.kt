@@ -48,4 +48,8 @@ class NonLitterPickup : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        //do nothing
+    }
+
 }

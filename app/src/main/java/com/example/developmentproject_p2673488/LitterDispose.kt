@@ -80,4 +80,9 @@ class LitterDispose : AppCompatActivity() {
             dbHelper.updateRubbishClicked(RubbishName, 1)
         }
     }
+
+
+    override fun onBackPressed() {
+        //do nothing
+    }
 }

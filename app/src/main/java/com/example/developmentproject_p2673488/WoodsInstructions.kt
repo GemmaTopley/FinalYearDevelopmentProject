@@ -16,4 +16,9 @@ class WoodsInstructions : AppCompatActivity() {
         startActivity(intent)
     }
 
+    override fun onBackPressed() {
+        val intent = Intent(this, LevelSelect::class.java)
+        startActivity(intent)
+    }
+
 }

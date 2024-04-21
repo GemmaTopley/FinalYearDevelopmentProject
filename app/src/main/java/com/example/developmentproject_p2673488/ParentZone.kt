@@ -338,4 +338,9 @@ class ParentZone : AppCompatActivity() {
         sticksCheck.isChecked = true
 
     }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
 }

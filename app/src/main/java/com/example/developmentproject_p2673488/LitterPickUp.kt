@@ -86,4 +86,8 @@ class LitterPickUp : AppCompatActivity() {
         }
 
     }
+
+    override fun onBackPressed() {
+        //do nothing
+    }
 }

@@ -15,4 +15,9 @@ class FinishedLevelWoods : AppCompatActivity() {
         val intent = Intent(this, LevelSelect::class.java)
         startActivity(intent)
     }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
 }
