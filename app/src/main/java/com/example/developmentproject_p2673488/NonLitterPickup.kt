@@ -6,9 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import com.example.developmentproject_p2673488.Model.DatabaseHelper
-import com.example.developmentproject_p2673488.Model.Litter
 import com.example.developmentproject_p2673488.Model.NonLitter
-import kotlin.properties.Delegates
 
 class NonLitterPickup : AppCompatActivity() {
 

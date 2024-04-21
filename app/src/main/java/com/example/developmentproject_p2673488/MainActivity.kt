@@ -1,6 +1,8 @@
 package com.example.developmentproject_p2673488
 
 import android.content.Intent
+import android.media.MediaPlayer
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,21 +11,42 @@ import com.example.developmentproject_p2673488.Model.DatabaseHelper
 class MainActivity : AppCompatActivity() {
 
     lateinit var dbHelper: DatabaseHelper
+    var mp = MediaPlayer()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        mp.setDataSource(this, Uri.parse("android.resource://"+this.packageName+"/"+R.raw.sakuragirlbeachchosic))
+        mp.prepare()
+        mp.start()
+        /*
+         Beach by Sakura Girl | https://soundcloud.com/sakuragirl_official
+         Music promoted by https://www.chosic.com/free-music/all/
+         Creative Commons CC BY 3.0
+         https://creativecommons.org/licenses/by/3.0/
+        */
 
     }
 
     fun playBtn (view : View){
         val intent = Intent(this, LevelSelect::class.java)
         startActivity(intent)
+
+        mp.stop()
+        mp.release()
+        mp= MediaPlayer()
+
     }
 
     fun parentBtn(view: View){
         val intent = Intent(this, ParentZoneValidation::class.java)
         startActivity(intent)
+
+        mp.stop()
+        mp.release()
+        mp=MediaPlayer()
     }
 
     fun resetBtn(view: View){
@@ -49,6 +72,17 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    fun resourcesBtn(view: View){
+        val intent = Intent(this, ResourcesPage::class.java)
+        startActivity(intent)
+
+        mp.stop()
+        mp.release()
+        mp=MediaPlayer()
+    }
+
+
 
     override fun onBackPressed() {
         //do nothing

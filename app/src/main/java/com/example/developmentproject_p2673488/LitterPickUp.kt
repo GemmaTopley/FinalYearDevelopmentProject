@@ -3,7 +3,6 @@ package com.example.developmentproject_p2673488
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import com.example.developmentproject_p2673488.Model.DatabaseHelper

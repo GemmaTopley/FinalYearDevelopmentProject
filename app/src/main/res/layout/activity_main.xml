@@ -52,6 +52,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
+    <Button
+        android:id="@+id/resourcesBtn"
+        android:layout_width="207dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#9CCC65"
+        android:onClick="resourcesBtn"
+        android:text="extra resources"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resetBtn" />
+
     <ImageButton
         android:id="@+id/playBtn"
         android:layout_width="300dp"
