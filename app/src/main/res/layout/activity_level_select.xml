@@ -116,17 +116,17 @@
     <ImageView
         android:id="@+id/beachTrophy"
         android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_height="325dp"
+        android:background="@drawable/beachtrophy"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/woodsTrophy"
         android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_height="325dp"
+        android:background="@drawable/woodstrophy"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

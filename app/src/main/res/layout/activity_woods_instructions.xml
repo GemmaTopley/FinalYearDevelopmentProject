@@ -4,6 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/messyforestlevel"
     tools:context=".WoodsInstructions">
 
+    <Button
+        android:id="@+id/goWoodsBtn"
+        android:layout_width="315dp"
+        android:layout_height="213dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="#A5D6A7"
+        android:fontFamily="@font/comic_neue_light"
+        android:onClick="startBtn"
+        android:text="GO TO THE WOODS"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="590dp"
+        android:layout_height="693dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/owlmascot" />
 </androidx.constraintlayout.widget.ConstraintLayout>

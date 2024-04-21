@@ -20,69 +20,71 @@
 
     <ImageButton
         android:id="@+id/bagBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="85dp"
+        android:layout_width="149dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginBottom="82dp"
+        android:background="@drawable/bag"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/flyTippingBtn"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/bugHotelBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="189dp"
-        android:layout_marginBottom="35dp"
+        android:layout_width="178dp"
+        android:layout_height="227dp"
+        android:layout_marginEnd="154dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bughotel"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
         android:id="@+id/flyTippingBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="31dp"
-        app:layout_constraintBottom_toTopOf="@+id/foodBtn"
-        app:layout_constraintEnd_toStartOf="@+id/stickBtn"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_width="334dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/flytipping"
+        app:layout_constraintBottom_toTopOf="@+id/bagBtn"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/petWasteBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="55dp"
+        android:layout_width="96dp"
+        android:layout_height="105dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/petwaste"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bugHotelBtn"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintEnd_toStartOf="@+id/foodBtn" />
 
     <ImageButton
         android:id="@+id/stickBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="29dp"
-        app:layout_constraintBottom_toTopOf="@+id/mushroomBtn"
-        app:layout_constraintEnd_toStartOf="@+id/mushroomBtn"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_width="160dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="577dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/sticks"
+        app:layout_constraintBottom_toTopOf="@+id/flyTippingBtn"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/foodBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="35dp"
+        android:layout_width="182dp"
+        android:layout_height="109dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/foodwaste"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/petWasteBtn"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintEnd_toStartOf="@+id/bugHotelBtn" />
 
     <ImageButton
         android:id="@+id/mushroomBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="11dp"
-        app:layout_constraintBottom_toTopOf="@+id/petWasteBtn"
-        app:layout_constraintStart_toStartOf="@+id/petWasteBtn"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_width="100dp"
+        android:layout_height="93dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/mushrooms"
+        app:layout_constraintBottom_toTopOf="@+id/foodBtn"
+        app:layout_constraintEnd_toStartOf="@+id/bugHotelBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

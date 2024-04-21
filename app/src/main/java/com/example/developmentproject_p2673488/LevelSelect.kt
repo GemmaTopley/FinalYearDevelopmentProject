@@ -42,7 +42,7 @@ class LevelSelect : AppCompatActivity() {
     }
 
     fun woodsBtn (view : View){
-        val intent = Intent(this, WoodsLevel::class.java)
+        val intent = Intent(this, WoodsInstructions::class.java)
         startActivity(intent)
     }
 

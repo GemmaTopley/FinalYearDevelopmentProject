@@ -37,9 +37,15 @@ class NonLitterPickup : AppCompatActivity() {
 
 
     fun okBtn (view : View){
-        val intent = Intent(this, BeachLevel::class.java)
-        startActivity(intent)
-        dbHelper.updateNonRubbishClicked(NRubbishName, 1)
+        if(dbHelper.getNonRubbish(NRubbishName)?.Level == "Beach"){
+            dbHelper.updateNonRubbishClicked(NRubbishName, 1)
+            val intent = Intent(this, BeachLevel::class.java)
+            startActivity(intent)
+        }else if(dbHelper.getNonRubbish(NRubbishName)?.Level == "Woods"){
+            dbHelper.updateNonRubbishClicked(NRubbishName, 1)
+            val intent = Intent(this, WoodsLevel::class.java)
+            startActivity(intent)
+        }
     }
 
 }

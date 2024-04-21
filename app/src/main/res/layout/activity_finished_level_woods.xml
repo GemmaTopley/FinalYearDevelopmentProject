@@ -4,6 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/forestlevel"
     tools:context=".FinishedLevelWoods">
 
+    <ImageButton
+        android:id="@+id/homeBtnWoods"
+        android:layout_width="209dp"
+        android:layout_height="200dp"
+        android:background="@drawable/homebtn"
+        android:onClick="homeBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="707dp"
+        android:layout_height="909dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/owlmascot" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -42,7 +42,13 @@ class LitterCorrect : AppCompatActivity() {
     fun okBtn (view : View){
         dbHelper.updateRubbishVis(RubbishName, 0)
         dbHelper.updateRubbishClicked(RubbishName, 1)
-        val intent = Intent(this, BeachLevel::class.java)
-        startActivity(intent)
+        if(dbHelper.getRubbish(RubbishName)?.Level == "Beach"){
+            val intent = Intent(this, BeachLevel::class.java)
+            startActivity(intent)
+        }else if(dbHelper.getRubbish(RubbishName)?.Level == "Woods"){
+            val intent = Intent(this, WoodsLevel::class.java)
+            startActivity(intent)
+        }
+
     }
 }

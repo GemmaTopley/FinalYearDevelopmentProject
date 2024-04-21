@@ -101,7 +101,7 @@ class WoodsLevel : AppCompatActivity() {
         }
 
         if (dbHelper.allClicked("TRubbish", "RubClicked", "Woods") && dbHelper.allClicked("TNonRubbish", "NRubClicked", "Woods")){
-            val intent = Intent(this, FinishedLevelBeach::class.java)
+            val intent = Intent(this, FinishedLevelWoods::class.java)
             startActivity(intent)
         }
 
