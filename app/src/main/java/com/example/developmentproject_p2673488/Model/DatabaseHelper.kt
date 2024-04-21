@@ -22,6 +22,7 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
     private val RubbishDisposal = "RubDisposal"
     private val RubbishDisposalInfo = "RubDisposalInfo"
     private val RubbishClicked = "RubClicked"
+    private val RubbishLevel = "Level"
 
 
 
@@ -32,17 +33,19 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
     private val NRubbishVisible = "NRubVisible"
     private val NRubbishParent = "ParentChoice"
     private val NRubbishClicked = "NRubClicked"
+    private val NRubbishLevel = "Level"
+
 
 
     override fun onCreate(db: SQLiteDatabase?) {
         var sqlCreateStatementRubbish: String = "CREATE TABLE IF NOT EXISTS $RubbishTableName ( $RubbishName TEXT, $RubbishDescription TEXT, " +
                 " $RubbishVisible TEXT, " + " $RubbishPickUp TEXT, "+" $RubbishParent INT, "+" $RubbishDisposal TEXT, "+" $RubbishDisposalInfo TEXT, " +
-                " $RubbishClicked INT, "+" $RubbishClicked INT )"
+                " $RubbishClicked INT, "+" $RubbishClicked INT, "+" $RubbishLevel TEXT)"
 
         db?.execSQL(sqlCreateStatementRubbish)
 
         var sqlCreateStatementNRubbish: String = "CREATE TABLE IF NOT EXISTS $NRubbishTableName ( $NRubbishName TEXT, $NRubbishDescription TEXT, " +
-                " $NRubbishVisible TEXT, "+" $NRubbishParent INT  )"
+                " $NRubbishVisible TEXT, "+" $NRubbishParent INT, "+" $NRubbishLevel TEXT  )"
 
         db?.execSQL(sqlCreateStatementNRubbish)
     }
@@ -72,10 +75,12 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
             val rubbishDisposal = cursor.getString(cursor.getColumnIndex(RubbishDisposal))
             val rubbishDisposalInfo = cursor.getString(cursor.getColumnIndex(RubbishDisposalInfo))
             val rubbishClicked = cursor.getInt(cursor.getColumnIndex(RubbishClicked))
+            val rubbishLevel = cursor.getString(cursor.getColumnIndex(RubbishLevel))
 
 
 
-            val rubbish = Litter(rubbishName,rubbishDesc,rubbishVisible,rubbishPickup, rubbishParent, rubbishDisposal, rubbishDisposalInfo, rubbishClicked)
+
+            val rubbish = Litter(rubbishName,rubbishDesc,rubbishVisible,rubbishPickup, rubbishParent, rubbishDisposal, rubbishDisposalInfo, rubbishClicked, rubbishLevel)
             cursor.close()
             db.close()
             return rubbish
@@ -102,8 +107,10 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
             val NRubbishVisible = cursor.getInt(cursor.getColumnIndex(NRubbishVisible))
             val NRubbishParent = cursor.getInt(cursor.getColumnIndex(NRubbishParent))
             val NRubbishClicked = cursor.getInt(cursor.getColumnIndex(NRubbishClicked))
+            val NRubbishLevel = cursor.getString(cursor.getColumnIndex(NRubbishLevel))
 
-            val NRubbish = NonLitter(NRubbishName,NRubbishDesc,NRubbishVisible, NRubbishParent, NRubbishClicked)
+
+            val NRubbish = NonLitter(NRubbishName,NRubbishDesc,NRubbishVisible, NRubbishParent, NRubbishClicked, NRubbishLevel)
             cursor.close()
             db.close()
             return NRubbish
@@ -163,9 +170,11 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
     }
 
     @SuppressLint("Range")
-    fun allClicked(table: String, column: String): Boolean{
+    fun allClicked(table: String, column: String, levelIn: String): Boolean{
         val db = this.readableDatabase
-        val cursor: Cursor? = db.query(table, arrayOf(column), null,null,null,null,null)
+        val level = "Level = ?"
+
+        val cursor: Cursor? = db.query(table, arrayOf(column), level,arrayOf(levelIn),null,null,null)
         cursor?.use{
             while (cursor.moveToNext()){
                 val element = cursor.getInt(cursor.getColumnIndex(column))
@@ -180,7 +189,5 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
         db.close()
         return true
     }
-
-
 
 }

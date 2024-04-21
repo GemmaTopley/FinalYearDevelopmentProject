@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sealevelback"
-    android:onClick="litterBtn"
     tools:context=".BeachLevel">
 
     <ImageButton
@@ -21,13 +20,12 @@
 
     <ImageButton
         android:id="@+id/bottleBtn"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="125dp"
+        android:layout_height="150dp"
         android:layout_marginStart="39dp"
         android:layout_marginEnd="416dp"
         android:layout_marginBottom="3dp"
         android:background="@drawable/greenplasticbottle"
-        android:onClick="litterBtn"
         android:rotation="90"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sandCastleBtn"
@@ -42,7 +40,6 @@
         android:layout_marginEnd="270dp"
         android:layout_marginBottom="72dp"
         android:background="@drawable/beerholder"
-        android:onClick="litterBtn"
         app:layout_constraintBottom_toTopOf="@+id/sandCastleBtn"
         app:layout_constraintEnd_toStartOf="@+id/canBtn"
         app:layout_constraintTop_toTopOf="parent" />
@@ -54,7 +51,6 @@
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="11dp"
         android:background="@drawable/redcan"
-        android:onClick="litterBtn"
         app:layout_constraintBottom_toTopOf="@+id/glassBtn"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -65,7 +61,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="87dp"
         android:background="@drawable/newspaper"
-        android:onClick="litterBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/bottleBtn" />
 
@@ -76,7 +71,6 @@
         android:layout_marginEnd="192dp"
         android:layout_marginBottom="36dp"
         android:background="@drawable/brokenbottle"
-        android:onClick="litterBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

@@ -10,6 +10,7 @@ import com.example.developmentproject_p2673488.Model.DatabaseHelper
 class LevelSelect : AppCompatActivity() {
 
     private lateinit var beachTrophy: ImageView
+    private lateinit var woodsTrophy: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,12 +19,19 @@ class LevelSelect : AppCompatActivity() {
         var dbHelper = DatabaseHelper(this)
 
         beachTrophy = findViewById(R.id.beachTrophy)
+        woodsTrophy = findViewById(R.id.woodsTrophy)
 
 
-        if (dbHelper.allClicked("TRubbish", "RubClicked") && dbHelper.allClicked("TNonRubbish", "NRubClicked")){
+        if (dbHelper.allClicked("TRubbish", "RubClicked", "Beach") && dbHelper.allClicked("TNonRubbish", "NRubClicked", "Beach")){
             beachTrophy.visibility = View.VISIBLE
         }else{
             beachTrophy.visibility = View.INVISIBLE
+        }
+
+        if (dbHelper.allClicked("TRubbish", "RubClicked", "Woods") && dbHelper.allClicked("TNonRubbish", "NRubClicked", "Woods")){
+            woodsTrophy.visibility = View.VISIBLE
+        }else{
+            woodsTrophy.visibility = View.INVISIBLE
         }
 
     }

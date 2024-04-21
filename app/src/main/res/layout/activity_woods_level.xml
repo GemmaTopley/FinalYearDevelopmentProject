@@ -8,6 +8,17 @@
     tools:context=".WoodsLevel">
 
     <ImageButton
+        android:id="@+id/backBtn2"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/backcloud"
+        android:onClick="backBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
         android:id="@+id/bagBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

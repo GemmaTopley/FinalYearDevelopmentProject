@@ -117,14 +117,13 @@ class BeachLevel : AppCompatActivity() {
         }
 
 
-        if (dbHelper.allClicked("TRubbish", "RubClicked") && dbHelper.allClicked("TNonRubbish", "NRubClicked")){
+        if (dbHelper.allClicked("TRubbish", "RubClicked", "Beach") && dbHelper.allClicked("TNonRubbish", "NRubClicked", "Beach")){
             val intent = Intent(this, FinishedLevelBeach::class.java)
             startActivity(intent)
         }
 
 
     }
-
     private fun handleLitterClick(litterName: String){
         val dbHelper = DatabaseHelper(this)
         val litter = dbHelper.getRubbish(litterName)
