@@ -314,6 +314,11 @@ class ParentZone : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun ratingBtn (view : View){
+        val intent = Intent(this, Rating::class.java)
+        startActivity(intent)
+    }
+
 
 
     fun defaultBtn(view: View){

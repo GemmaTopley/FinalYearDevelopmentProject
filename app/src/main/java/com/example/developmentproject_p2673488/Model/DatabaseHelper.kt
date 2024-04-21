@@ -35,6 +35,10 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
     private val NRubbishClicked = "NRubClicked"
     private val NRubbishLevel = "Level"
 
+    /* Rating Table */
+    private val RatingTableName = "TRating"
+    private var RatingStars = "Stars"
+
 
 
     override fun onCreate(db: SQLiteDatabase?) {
@@ -48,6 +52,10 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
                 " $NRubbishVisible TEXT, "+" $NRubbishParent INT, "+" $NRubbishLevel TEXT  )"
 
         db?.execSQL(sqlCreateStatementNRubbish)
+
+        var sqlCreateStatementRating: String = "CREATE TABLE IF NOT EXISTS $RatingTableName ( $RatingStars INT )"
+
+        db?.execSQL(sqlCreateStatementRating)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -188,6 +196,36 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
         cursor?.close()
         db.close()
         return true
+    }
+
+    @SuppressLint("Range")
+    fun getRating(name : String) : Rating? {
+        val db = readableDatabase
+
+        var sqlStatement ="SELECT * FROM $RatingTableName WHERE $RatingStars = ?"
+
+        val param = arrayOf(name)
+        val cursor: Cursor = db.rawQuery(sqlStatement, param)
+
+        if(cursor.moveToFirst()){
+            val stars = cursor.getInt(cursor.getColumnIndex(RatingStars))
+            val rubbish = Rating(stars)
+            cursor.close()
+            db.close()
+            return rubbish
+        } else{
+            cursor.close()
+            db.close()
+            return null
+        }
+    }
+
+    fun addRating(value: Int){
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(RatingStars, value)
+        db.insert(RatingTableName, null, contentValues)
+        db.close()
     }
 
 }

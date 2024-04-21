@@ -15,6 +15,7 @@
         android:text="Mushroom"
         android:textSize="48sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/seaweedCheck"
         app:layout_constraintStart_toStartOf="@+id/bugHotelCheck"
         app:layout_constraintTop_toTopOf="@+id/seaweedCheck" />
 
@@ -27,10 +28,9 @@
         android:text="Sticks"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/newspaperCheck"
         app:layout_constraintStart_toEndOf="@+id/shellsCheck"
-        app:layout_constraintTop_toBottomOf="@+id/bugHotelCheck"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toTopOf="@+id/newspaperCheck" />
 
     <CheckBox
         android:id="@+id/bugHotelCheck"
@@ -40,9 +40,9 @@
         android:text="Bug Hotel"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/sticksCheck"
+        app:layout_constraintBottom_toBottomOf="@+id/sandCastleCheck"
         app:layout_constraintStart_toStartOf="@+id/sticksCheck"
-        app:layout_constraintTop_toBottomOf="@+id/mushroomCheck"
+        app:layout_constraintTop_toTopOf="@+id/sandCastleCheck"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
@@ -59,6 +59,19 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ratingBtn"
+        android:layout_width="241dp"
+        android:layout_height="142dp"
+        android:backgroundTint="#9CCC65"
+        android:fontFamily="@font/comic_neue_light"
+        android:onClick="ratingBtn"
+        android:text="Ratings!"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/confirmBtn"
@@ -84,6 +97,7 @@
         android:text="Seaweed"
         android:textSize="48sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/bagCheck"
         app:layout_constraintStart_toStartOf="@+id/sandCastleCheck"
         app:layout_constraintTop_toTopOf="@+id/bagCheck" />
 
@@ -95,9 +109,9 @@
         android:text="Sand Castle"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/newspaperCheck"
+        app:layout_constraintBottom_toBottomOf="@+id/flyTippingCheck"
         app:layout_constraintStart_toStartOf="@+id/newspaperCheck"
-        app:layout_constraintTop_toBottomOf="@+id/seaweedCheck"
+        app:layout_constraintTop_toTopOf="@+id/flyTippingCheck"
         app:layout_constraintVertical_bias="0.5" />
 
     <CheckBox
@@ -108,9 +122,9 @@
         android:text="Newspaper"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/shellsCheck"
+        app:layout_constraintBottom_toBottomOf="@+id/foodCheck"
         app:layout_constraintStart_toStartOf="@+id/shellsCheck"
-        app:layout_constraintTop_toBottomOf="@+id/sandCastleCheck"
+        app:layout_constraintTop_toTopOf="@+id/foodCheck"
         app:layout_constraintVertical_bias="0.5" />
 
     <CheckBox
@@ -226,6 +240,7 @@
         android:text="Plastic Bag"
         android:textSize="48sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/glassCheck"
         app:layout_constraintStart_toStartOf="@+id/flyTippingCheck"
         app:layout_constraintTop_toTopOf="@+id/glassCheck" />
 
@@ -237,9 +252,9 @@
         android:text="Fly Tipping"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/foodCheck"
+        app:layout_constraintBottom_toBottomOf="@+id/canCheck"
         app:layout_constraintStart_toStartOf="@+id/foodCheck"
-        app:layout_constraintTop_toBottomOf="@+id/bagCheck"
+        app:layout_constraintTop_toTopOf="@+id/canCheck"
         app:layout_constraintVertical_bias="0.5" />
 
     <CheckBox
@@ -250,9 +265,9 @@
         android:text="Food Waste"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/petWasteCheck"
+        app:layout_constraintBottom_toBottomOf="@+id/bottleCheck"
         app:layout_constraintStart_toStartOf="@+id/petWasteCheck"
-        app:layout_constraintTop_toBottomOf="@+id/flyTippingCheck"
+        app:layout_constraintTop_toTopOf="@+id/bottleCheck"
         app:layout_constraintVertical_bias="0.5" />
 
     <CheckBox
