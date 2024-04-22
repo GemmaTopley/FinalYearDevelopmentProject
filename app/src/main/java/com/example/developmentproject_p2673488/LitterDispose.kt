@@ -12,7 +12,7 @@ class LitterDispose : AppCompatActivity() {
 
     lateinit var RubbishName: String
     lateinit var RubbishDispose: String
-    lateinit var RubbishDesc: String
+    lateinit var RubbishDisposeInfo: String
 
     lateinit var selectedRubbish: Litter
 
@@ -27,14 +27,14 @@ class LitterDispose : AppCompatActivity() {
         selectedRubbish = (intent.getSerializableExtra("Litter") as Litter)
 
         RubbishName = selectedRubbish.RubName
-        RubbishDesc = selectedRubbish.RubDescription
+        RubbishDisposeInfo = selectedRubbish.RubDisposalInfo
         RubbishDispose = selectedRubbish.RubDisposal
 
         var itemNameTxt = findViewById<TextView>(R.id.itemNameTxt)
         var itemDescTxt = findViewById<TextView>(R.id.itemDescTxt)
 
         itemNameTxt.setText(RubbishName)
-        itemDescTxt.setText(RubbishDesc)
+        itemDescTxt.setText(RubbishDisposeInfo)
 
     }
 

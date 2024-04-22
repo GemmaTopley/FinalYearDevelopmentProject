@@ -18,9 +18,28 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="707dp"
-        android:layout_height="909dp"
+        android:layout_width="597dp"
+        android:layout_height="693dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/owlmascot" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="524dp"
+        android:layout_height="496dp"
+        android:layout_marginEnd="276dp"
+        android:layout_marginBottom="136dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/woodsspeech" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="340dp"
+        android:layout_height="410dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/woodstrophy" />
 </androidx.constraintlayout.widget.ConstraintLayout>

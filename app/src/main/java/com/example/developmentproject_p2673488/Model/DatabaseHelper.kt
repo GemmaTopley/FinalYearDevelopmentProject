@@ -23,6 +23,7 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
     private val RubbishDisposalInfo = "RubDisposalInfo"
     private val RubbishClicked = "RubClicked"
     private val RubbishLevel = "Level"
+    private val RubbishCorrect = "RubCorrect"
 
 
 
@@ -44,12 +45,12 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
     override fun onCreate(db: SQLiteDatabase?) {
         var sqlCreateStatementRubbish: String = "CREATE TABLE IF NOT EXISTS $RubbishTableName ( $RubbishName TEXT, $RubbishDescription TEXT, " +
                 " $RubbishVisible TEXT, " + " $RubbishPickUp TEXT, "+" $RubbishParent INT, "+" $RubbishDisposal TEXT, "+" $RubbishDisposalInfo TEXT, " +
-                " $RubbishClicked INT, "+" $RubbishClicked INT, "+" $RubbishLevel TEXT)"
+                " $RubbishClicked INT, "+" $RubbishClicked INT, "+" $RubbishLevel TEXT, "+" $RubbishCorrect TEXT )"
 
         db?.execSQL(sqlCreateStatementRubbish)
 
         var sqlCreateStatementNRubbish: String = "CREATE TABLE IF NOT EXISTS $NRubbishTableName ( $NRubbishName TEXT, $NRubbishDescription TEXT, " +
-                " $NRubbishVisible TEXT, "+" $NRubbishParent INT, "+" $NRubbishLevel TEXT  )"
+                " $NRubbishVisible TEXT, "+" $NRubbishParent INT, "+" $NRubbishLevel TEXT )"
 
         db?.execSQL(sqlCreateStatementNRubbish)
 
@@ -84,11 +85,12 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DataBaseName
             val rubbishDisposalInfo = cursor.getString(cursor.getColumnIndex(RubbishDisposalInfo))
             val rubbishClicked = cursor.getInt(cursor.getColumnIndex(RubbishClicked))
             val rubbishLevel = cursor.getString(cursor.getColumnIndex(RubbishLevel))
+            val rubbishCorrect = cursor.getString(cursor.getColumnIndex(RubbishCorrect))
 
 
 
 
-            val rubbish = Litter(rubbishName,rubbishDesc,rubbishVisible,rubbishPickup, rubbishParent, rubbishDisposal, rubbishDisposalInfo, rubbishClicked, rubbishLevel)
+            val rubbish = Litter(rubbishName,rubbishDesc,rubbishVisible,rubbishPickup, rubbishParent, rubbishDisposal, rubbishDisposalInfo, rubbishClicked, rubbishLevel, rubbishCorrect)
             cursor.close()
             db.close()
             return rubbish

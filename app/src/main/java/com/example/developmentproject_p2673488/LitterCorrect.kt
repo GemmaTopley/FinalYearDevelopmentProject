@@ -11,7 +11,7 @@ import com.example.developmentproject_p2673488.Model.Litter
 class LitterCorrect : AppCompatActivity() {
 
     lateinit var RubbishDisposal: String
-    lateinit var RubbishDisposalInfo: String
+    lateinit var RubbishCorrect: String
     lateinit var RubbishName: String
 
     lateinit var selectedRubbish: Litter
@@ -28,13 +28,13 @@ class LitterCorrect : AppCompatActivity() {
 
         RubbishName = selectedRubbish.RubName
         RubbishDisposal = selectedRubbish.RubDisposal
-        RubbishDisposalInfo = selectedRubbish.RubDisposalInfo
+        RubbishCorrect = selectedRubbish.RubCorrect
 
         var itemNameTxt = findViewById<TextView>(R.id.itemNameTxt)
         var itemDescTxt = findViewById<TextView>(R.id.itemDescTxt)
 
         itemNameTxt.setText(RubbishDisposal)
-        itemDescTxt.setText(RubbishDisposalInfo)
+        itemDescTxt.setText(RubbishCorrect)
 
 
     }

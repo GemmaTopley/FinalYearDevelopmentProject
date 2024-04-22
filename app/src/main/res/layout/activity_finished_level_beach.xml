@@ -15,21 +15,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="495dp"
-        android:layout_height="375dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="216dp"
-        android:background="#B5F9FBE7"
-        android:fontFamily="@font/comic_neue_light"
-        android:text="WOW WELL DONE! My home is so clean now!"
-        android:textAlignment="center"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="209dp"
@@ -38,4 +23,23 @@
         android:onClick="homeBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="547dp"
+        android:layout_height="523dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginBottom="132dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/beachspeech" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="291dp"
+        android:layout_height="359dp"
+        android:layout_marginEnd="396dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/beachtrophy" />
 </androidx.constraintlayout.widget.ConstraintLayout>
