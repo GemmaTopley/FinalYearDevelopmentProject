@@ -19,33 +19,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/recyclingGameTitleTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comic_neue_light"
         android:text="Recycling Game"
         android:textSize="60sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintBottom_toTopOf="@+id/recycleGameTxt"
+        app:layout_constraintEnd_toEndOf="@+id/recycleGameTxt"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/recycleGameTxt"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/bugHotelsTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comic_neue_light"
         android:text="Learn more about bug hotels"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/bugHotelsBtn"
+        app:layout_constraintEnd_toEndOf="@+id/bugHotelsBtn"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/bugHotelsBtn"
+        app:layout_constraintTop_toBottomOf="@+id/recycleGameBtn"
         app:layout_constraintVertical_bias="0.5" />
 
     <TextView
@@ -57,18 +57,19 @@
         android:textAlignment="center"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/musicTxt"
+        app:layout_constraintEnd_toEndOf="@+id/musicTxt"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="@+id/musicTxt"
+        app:layout_constraintTop_toBottomOf="@+id/bugHotelsBtn"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/musicBtn"
         android:layout_width="149dp"
         android:layout_height="67dp"
         android:fontFamily="@font/comic_neue_light"
+        android:onClick="songBtn"
         android:text="find it here"
         android:textAlignment="center"
         android:textSize="16sp"
@@ -77,29 +78,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/musicTxt"
         app:layout_constraintVertical_bias="0.5" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/musicTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comic_neue_light"
         android:text="Beach by Sakura Girl"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/musicBtn"
+        app:layout_constraintEnd_toEndOf="@+id/musicBtn"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/musicBtn"
         app:layout_constraintTop_toBottomOf="@+id/musicTitltTxt"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/bugHotelsBtn"
         android:layout_width="156dp"
         android:layout_height="86dp"
         android:fontFamily="@font/comic_neue_light"
+        android:onClick="bugHotelsBtn"
         android:text="HERE"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -107,37 +109,38 @@
         app:layout_constraintEnd_toEndOf="@+id/musicTitltTxt"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/musicTitltTxt"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/bugHotelsTxt"
         app:layout_constraintVertical_bias="0.5" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/recycleGameTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comic_neue_light"
         android:text="Play &quot;Litter Critters - learn to sort and recycle!&quot;  to learn more about recycling"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/recycleGameBtn"
+        app:layout_constraintEnd_toEndOf="@+id/recycleGameBtn"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/recycleGameBtn"
+        app:layout_constraintTop_toBottomOf="@+id/recyclingGameTitleTxt"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/recycleGameBtn"
         android:layout_width="159dp"
         android:layout_height="71dp"
         android:fontFamily="@font/comic_neue_light"
+        android:onClick="litterCritterBtn"
         android:text="Play Now"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
-        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintBottom_toTopOf="@+id/bugHotelsTxt"
+        app:layout_constraintEnd_toEndOf="@+id/bugHotelsTxt"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/bugHotelsTxt"
+        app:layout_constraintTop_toBottomOf="@+id/recycleGameTxt"
         app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
