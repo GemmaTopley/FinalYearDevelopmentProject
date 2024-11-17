@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/forestlevel"
+    tools:context=".WoodsLevel">
+
+    <ImageButton
+        android:id="@+id/backBtn2"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/backcloud"
+        android:onClick="backBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/bagBtn"
+        android:layout_width="149dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginBottom="82dp"
+        android:background="@drawable/bag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/bugHotelBtn"
+        android:layout_width="178dp"
+        android:layout_height="227dp"
+        android:layout_marginEnd="154dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bughotel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/flyTippingBtn"
+        android:layout_width="334dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/flytipping"
+        app:layout_constraintBottom_toTopOf="@+id/bagBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/petWasteBtn"
+        android:layout_width="96dp"
+        android:layout_height="105dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/petwaste"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/foodBtn" />
+
+    <ImageButton
+        android:id="@+id/stickBtn"
+        android:layout_width="160dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="577dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/sticks"
+        app:layout_constraintBottom_toTopOf="@+id/flyTippingBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/foodBtn"
+        android:layout_width="182dp"
+        android:layout_height="109dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/foodwaste"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bugHotelBtn" />
+
+    <ImageButton
+        android:id="@+id/mushroomBtn"
+        android:layout_width="100dp"
+        android:layout_height="93dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/mushrooms"
+        app:layout_constraintBottom_toTopOf="@+id/foodBtn"
+        app:layout_constraintEnd_toStartOf="@+id/bugHotelBtn" />
+</androidx.constraintlayout.widget.ConstraintLayout>

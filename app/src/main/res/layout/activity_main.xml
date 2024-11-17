@@ -30,33 +30,59 @@
         android:id="@+id/PZBtn"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
         android:backgroundTint="#9CCC65"
         android:onClick="parentBtn"
         android:text="parent zone"
         android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/resetBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RRTitle" />
+        app:layout_constraintTop_toTopOf="@+id/resetBtn" />
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="19dp"
+        android:backgroundTint="#9CCC65"
+        android:onClick="resetBtn"
+        android:text="reset levels"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <Button
+        android:id="@+id/resourcesBtn"
+        android:layout_width="207dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#9CCC65"
+        android:onClick="resourcesBtn"
+        android:text="extra resources"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resetBtn" />
 
     <ImageButton
         android:id="@+id/playBtn"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_marginStart="490dp"
+        android:layout_marginTop="23dp"
         android:background="@drawable/playsun"
         android:onClick="playBtn"
-        app:layout_constraintBottom_toTopOf="@+id/RubbishImg"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/RubbishImg"
+        app:layout_constraintStart_toStartOf="@+id/RubbishImg"
         app:layout_constraintTop_toBottomOf="@+id/RRTitle" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="223dp"
         android:layout_height="221dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/RRTitle"
+        android:layout_marginStart="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/RRTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/RRTitle"
         app:srcCompat="@drawable/ecoearth1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

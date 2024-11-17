@@ -8,6 +8,17 @@
     tools:context=".LevelSelect">
 
     <ImageButton
+        android:id="@+id/homeBtn3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/homebtn"
+        android:onClick="homeBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
         android:id="@+id/beachLvlBtn"
         android:layout_width="500dp"
         android:layout_height="500dp"
@@ -24,6 +35,7 @@
         android:layout_height="500dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/forestlevel"
+        android:onClick="woodsBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/beachLvlBtn" />
@@ -70,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="300dp"
         android:fontFamily="@font/comic_neue_light"
-        android:text="Forest"
+        android:text="Woodland"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -100,5 +112,21 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView"
         app:srcCompat="@drawable/owlmascot" />
+
+    <ImageView
+        android:id="@+id/beachTrophy"
+        android:layout_width="250dp"
+        android:layout_height="325dp"
+        android:background="@drawable/beachtrophy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/woodsTrophy"
+        android:layout_width="250dp"
+        android:layout_height="325dp"
+        android:background="@drawable/woodstrophy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

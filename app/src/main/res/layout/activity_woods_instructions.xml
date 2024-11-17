@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/messyforestlevel"
+    tools:context=".WoodsInstructions">
+
+    <Button
+        android:id="@+id/goWoodsBtn"
+        android:layout_width="315dp"
+        android:layout_height="213dp"
+        android:backgroundTint="#9CCC65"
+        android:fontFamily="@font/comic_neue_light"
+        android:onClick="startBtn"
+        android:text="GO TO THE WOODS"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="516dp"
+        android:layout_height="654dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goWoodsBtn"
+        app:srcCompat="@drawable/owlmascot" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="963dp"
+        android:layout_height="447dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/woodsspeechintro" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="905dp"
+        android:layout_height="444dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/woodsinstrucitons" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

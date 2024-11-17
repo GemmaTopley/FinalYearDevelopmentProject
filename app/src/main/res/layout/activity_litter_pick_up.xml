@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDE7"
+    tools:context=".LitterPickUp">
+
+    <TextView
+        android:id="@+id/itemNameTxt"
+        android:layout_width="695dp"
+        android:layout_height="102dp"
+        android:fontFamily="@font/comic_neue_light"
+        android:text="ITEM NAME"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/itemDescTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/itemDescTxt"
+        android:layout_width="781dp"
+        android:layout_height="300dp"
+        android:fontFamily="@font/comic_neue_light"
+        android:text="ITEM DESCRIPTION"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/pickErrorTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemNameTxt"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/pickErrorTxt"
+        android:layout_width="814dp"
+        android:layout_height="50dp"
+        android:text="Wrong choice - Try again"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/pickerImgBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemDescTxt"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageButton
+        android:id="@+id/pickerImgBtn"
+        android:layout_width="407dp"
+        android:layout_height="225dp"
+        android:background="@drawable/litterpicker"
+        android:onClick="PickerBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/adultImgBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/glovesImgBtn"
+        app:layout_constraintTop_toBottomOf="@+id/pickErrorTxt"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageButton
+        android:id="@+id/glovesImgBtn"
+        android:layout_width="214dp"
+        android:layout_height="225dp"
+        android:background="@drawable/gloves"
+        android:onClick="GlovesBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/pickerImgBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pickErrorTxt"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageButton
+        android:id="@+id/adultImgBtn"
+        android:layout_width="191dp"
+        android:layout_height="225dp"
+        android:background="@drawable/adult"
+        android:onClick="adultBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pickerImgBtn"
+        app:layout_constraintTop_toBottomOf="@+id/pickErrorTxt"
+        app:layout_constraintVertical_bias="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

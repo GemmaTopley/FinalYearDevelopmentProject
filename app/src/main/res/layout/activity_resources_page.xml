@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F8E9"
+    tools:context=".ResourcesPage">
+
+    <ImageButton
+        android:id="@+id/homeBtnRP"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/homebtn"
+        android:onClick="homeBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/recyclingGameTitleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comic_neue_light"
+        android:text="Recycling Game"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recycleGameTxt"
+        app:layout_constraintEnd_toEndOf="@+id/recycleGameTxt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/recycleGameTxt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/bugHotelsTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comic_neue_light"
+        android:text="Learn more about bug hotels"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/bugHotelsBtn"
+        app:layout_constraintEnd_toEndOf="@+id/bugHotelsBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/bugHotelsBtn"
+        app:layout_constraintTop_toBottomOf="@+id/recycleGameBtn"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/musicTitltTxt"
+        android:layout_width="189dp"
+        android:layout_height="70dp"
+        android:fontFamily="@font/comic_neue_light"
+        android:text="Music"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/musicTxt"
+        app:layout_constraintEnd_toEndOf="@+id/musicTxt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/musicTxt"
+        app:layout_constraintTop_toBottomOf="@+id/bugHotelsBtn"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/musicBtn"
+        android:layout_width="149dp"
+        android:layout_height="67dp"
+        android:fontFamily="@font/comic_neue_light"
+        android:onClick="songBtn"
+        android:text="find it here"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/musicTxt"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/musicTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comic_neue_light"
+        android:text="Beach by Sakura Girl"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/musicBtn"
+        app:layout_constraintEnd_toEndOf="@+id/musicBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/musicBtn"
+        app:layout_constraintTop_toBottomOf="@+id/musicTitltTxt"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/bugHotelsBtn"
+        android:layout_width="156dp"
+        android:layout_height="86dp"
+        android:fontFamily="@font/comic_neue_light"
+        android:onClick="bugHotelsBtn"
+        android:text="HERE"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/musicTitltTxt"
+        app:layout_constraintEnd_toEndOf="@+id/musicTitltTxt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/musicTitltTxt"
+        app:layout_constraintTop_toBottomOf="@+id/bugHotelsTxt"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/recycleGameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comic_neue_light"
+        android:text="Play &quot;Litter Critters - learn to sort and recycle!&quot;  to learn more about recycling"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recycleGameBtn"
+        app:layout_constraintEnd_toEndOf="@+id/recycleGameBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/recycleGameBtn"
+        app:layout_constraintTop_toBottomOf="@+id/recyclingGameTitleTxt"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/recycleGameBtn"
+        android:layout_width="159dp"
+        android:layout_height="71dp"
+        android:fontFamily="@font/comic_neue_light"
+        android:onClick="litterCritterBtn"
+        android:text="Play Now"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/bugHotelsTxt"
+        app:layout_constraintEnd_toEndOf="@+id/bugHotelsTxt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/bugHotelsTxt"
+        app:layout_constraintTop_toBottomOf="@+id/recycleGameTxt"
+        app:layout_constraintVertical_bias="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,4 +7,95 @@
     android:background="@drawable/sealevelback"
     tools:context=".BeachLevel">
 
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/backcloud"
+        android:onClick="backBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/bottleBtn"
+        android:layout_width="148dp"
+        android:layout_height="168dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/greenplasticbottle"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ringsBtn"
+        android:layout_width="125dp"
+        android:layout_height="114dp"
+        android:layout_marginEnd="242dp"
+        android:layout_marginBottom="69dp"
+        android:background="@drawable/beerholder"
+        app:layout_constraintBottom_toTopOf="@+id/sandCastleBtn"
+        app:layout_constraintEnd_toStartOf="@+id/canBtn" />
+
+    <ImageButton
+        android:id="@+id/canBtn"
+        android:layout_width="172dp"
+        android:layout_height="128dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/redcan"
+        app:layout_constraintBottom_toTopOf="@+id/glassBtn"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/newsBtn"
+        android:layout_width="206dp"
+        android:layout_height="174dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/newspaper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bottleBtn" />
+
+    <ImageButton
+        android:id="@+id/glassBtn"
+        android:layout_width="263dp"
+        android:layout_height="143dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="116dp"
+        android:background="@drawable/brokenbottle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/seaWeedBtn"
+        android:layout_width="164dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/seaweed"
+        app:layout_constraintBottom_toTopOf="@+id/bottleBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/shellsBtn"
+        android:layout_width="156dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="198dp"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/shells"
+        app:layout_constraintBottom_toTopOf="@+id/newsBtn"
+        app:layout_constraintStart_toEndOf="@+id/seaWeedBtn" />
+
+    <ImageButton
+        android:id="@+id/sandCastleBtn"
+        android:layout_width="131dp"
+        android:layout_height="153dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/sandcastle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/glassBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

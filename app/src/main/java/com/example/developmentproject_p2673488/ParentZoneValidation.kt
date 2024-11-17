@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
-import org.w3c.dom.Text
 
 class ParentZoneValidation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +21,15 @@ class ParentZoneValidation : AppCompatActivity() {
         } else {
             error.visibility = View.VISIBLE
         }
+    }
 
+    fun homeBtn (view : View){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }
