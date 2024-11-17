@@ -323,6 +323,9 @@ class ParentZone : AppCompatActivity() {
 
     fun defaultBtn(view: View){
 
+
+        errorTxt = findViewById(R.id.errorTxtPZ)
+
         errorTxt.visibility = View.INVISIBLE
 
         dbHelper.getRubbish("Can")?.let { dbHelper.updateRubbishVis("Can", 1); dbHelper.updateRubbishClicked("Can", 0); updateRubbishDBParent("Can", 1)}

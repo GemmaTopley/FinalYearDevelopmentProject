@@ -18,7 +18,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        mp.setDataSource(this, Uri.parse("android.resource://"+this.packageName+"/"+R.raw.sakuragirlbeachchosic))
+        mp.setDataSource(this,
+            Uri.parse("android.resource://"+this.packageName+"/"+R.raw.sakuragirlbeachchosic))
         mp.prepare()
         mp.start()
         /*

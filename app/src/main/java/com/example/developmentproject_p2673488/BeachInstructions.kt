@@ -11,7 +11,6 @@ class BeachInstructions : AppCompatActivity() {
         setContentView(R.layout.activity_beach_instructions)
     }
 
-
     fun startBtn (view : View){
         val intent = Intent(this, BeachLevel::class.java)
         startActivity(intent)

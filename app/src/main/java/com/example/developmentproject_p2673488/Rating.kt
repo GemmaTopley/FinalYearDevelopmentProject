@@ -58,4 +58,9 @@ class Rating : AppCompatActivity() {
         val intent = Intent(this, ParentZone::class.java)
         startActivity(intent)
     }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, ParentZone::class.java)
+        startActivity(intent)
+    }
 }
